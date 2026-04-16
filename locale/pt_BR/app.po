@@ -1,0 +1,80 @@
+# Portuguese (Brazil) translations for portfolio.
+# Copyright (C) 2026 Nicholas Nogueira
+# Nicholas Nogueira <nicholastimbo2022@gmail.com>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: portfolio 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-15 00:00+0000\n"
+"PO-Revision-Date: 2026-04-15 00:00+0000\n"
+"Last-Translator: Nicholas Nogueira <nicholastimbo2022@gmail.com>\n"
+"Language-Team: Portuguese <pt_BR@li.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "About"
+msgstr "Sobre"
+
+msgid "Experience"
+msgstr "Experiência"
+
+msgid "Education"
+msgstr "Formação"
+
+msgid "Skills"
+msgstr "Skills"
+
+msgid "Projects"
+msgstr "Projetos"
+
+msgid "Blog"
+msgstr "Blog"
+
+msgid "View Projects"
+msgstr "Ver Projetos"
+
+msgid "Get in Touch"
+msgstr "Entrar em Contato"
+
+msgid "About Me"
+msgstr "Sobre Mim"
+
+msgid "Let's talk"
+msgstr "Vamos conversar"
+
+msgid "Present"
+msgstr "Presente"
+
+msgid "Academic"
+msgstr "Acadêmica"
+
+msgid "Certifications"
+msgstr "Certificações"
+
+msgid "Volunteering"
+msgstr "Voluntariado"
+
+msgid "Languages"
+msgstr "Idiomas"
+
+msgid "Highlights"
+msgstr "Destaques"
+
+msgid "No posts published yet."
+msgstr "Nenhum post publicado ainda."
+
+msgid "New content coming soon!"
+msgstr "Em breve novos conteúdos!"
+
+msgid "Back to blog"
+msgstr "Voltar ao blog"
+
+msgid "min read"
+msgstr "min de leitura"
+
+msgid "All"
+msgstr "Todos"

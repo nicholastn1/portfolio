@@ -21,6 +21,7 @@ module Components
             nav(class: "hidden md:flex items-center gap-6") do
               nav_links
               div(class: "flex items-center gap-3 ml-4") do
+                render Components::Ui::LanguageSwitcher.new
                 render Components::Ui::ThemeToggle.new
               end
             end
@@ -45,6 +46,7 @@ module Components
             nav(class: "flex flex-col gap-4 p-6") do
               nav_links(mobile: true)
               div(class: "flex items-center gap-3 pt-4 border-t border-white/10") do
+                render Components::Ui::LanguageSwitcher.new
                 render Components::Ui::ThemeToggle.new
               end
             end

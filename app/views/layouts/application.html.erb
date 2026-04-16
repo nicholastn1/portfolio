@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+<html lang="<%= I18n.locale.to_s.start_with?('pt') ? 'pt-BR' : 'en' %>" class="dark">
   <head>
     <title><%= content_for(:title) || "Nicholas Nogueira | Software Engineer" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,6 +12,11 @@
     <%= csp_meta_tag %>
 
     <%= yield :head %>
+
+    <%# Hreflang tags for SEO %>
+    <link rel="alternate" hreflang="pt-BR" href="<%= root_url(locale: nil) %>">
+    <link rel="alternate" hreflang="en" href="<%= root_url(locale: 'en') rescue localized_root_url(locale: 'en') %>">
+    <link rel="alternate" hreflang="x-default" href="<%= root_url(locale: nil) %>">
 
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
