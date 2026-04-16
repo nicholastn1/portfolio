@@ -36,3 +36,11 @@
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+# dotcontext generated files (per-session, not versioned)
+.context/prp/
+.context/discoveries/
+.context/bugs/
+
+# Claude Code worktrees (temporary agent workspaces)
+.claude/worktrees/

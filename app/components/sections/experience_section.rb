@@ -78,7 +78,7 @@ module Components
                 plain experience.company
               end
             end
-            p(class: "text-accent-green font-medium") { experience.role_pt }
+            p(class: "text-accent-green font-medium") { experience.role }
           end
 
           span(class: "text-sm text-text-muted whitespace-nowrap") do
@@ -88,11 +88,11 @@ module Components
       end
 
       def render_card_body(experience)
-        if experience.description_pt.present?
-          p(class: "text-text-muted mb-4 leading-relaxed") { experience.description_pt }
+        if experience.description.present?
+          p(class: "text-text-muted mb-4 leading-relaxed") { experience.description }
         end
 
-        achievements = experience.achievements_pt
+        achievements = experience.achievements
         return unless achievements.present?
 
         ul(class: "space-y-2 mb-4") do

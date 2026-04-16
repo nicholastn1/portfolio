@@ -72,8 +72,8 @@ module Components
           div(class: "flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-3") do
             div do
               h4(class: "text-lg font-bold text-white") { education.institution }
-              p(class: "text-accent-green font-medium") { education.degree_pt }
-              p(class: "text-sm text-text-muted") { education.course_pt }
+              p(class: "text-accent-green font-medium") { education.degree }
+              p(class: "text-sm text-text-muted") { education.course }
             end
 
             span(class: "text-sm text-text-muted whitespace-nowrap") do
@@ -81,7 +81,7 @@ module Components
             end
           end
 
-          activities = education.activities_pt
+          activities = education.activities
           return unless activities.present?
 
           ul(class: "space-y-1.5 mt-4 pt-4 border-t border-white/5") do
@@ -126,7 +126,7 @@ module Components
         end
 
         send(tag, **attrs) do
-          p(class: "font-semibold text-white text-sm mb-1") { certification.name_pt }
+          p(class: "font-semibold text-white text-sm mb-1") { certification.name }
           p(class: "text-xs text-text-muted mb-2") { certification.provider }
           p(class: "text-xs text-accent-green") { format_date(certification.certified_at) }
         end
@@ -156,7 +156,7 @@ module Components
                  "hover:bg-white/5 hover:border-white/10 transition-all duration-300"
         ) do
           div do
-            p(class: "font-semibold text-white") { volunteering.role_pt }
+            p(class: "font-semibold text-white") { volunteering.role }
             p(class: "text-sm text-text-muted") { volunteering.organization }
           end
 
@@ -189,9 +189,9 @@ module Components
         span(
           class: "inline-flex items-center gap-2 px-4 py-2 rounded-full border font-medium text-sm #{color_class}"
         ) do
-          span(class: "font-semibold") { language.name_pt }
+          span(class: "font-semibold") { language.name }
           span(class: "opacity-60") { "·" }
-          span(class: "text-xs opacity-80") { language.level_pt }
+          span(class: "text-xs opacity-80") { language.level }
         end
       end
 

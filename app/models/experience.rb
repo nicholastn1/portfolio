@@ -1,6 +1,6 @@
 class Experience < ApplicationRecord
   include Localizable
-  localized_field :role, :description
+  localized_field :role, :description, :achievements
 
   validates :company, presence: true
   validates :role_pt, presence: true

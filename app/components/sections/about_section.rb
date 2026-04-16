@@ -78,8 +78,8 @@ class Components::Sections::AboutSection < Components::Base
   end
 
   def bio_paragraphs
-    if @personal_info.respond_to?(:bio_pt)
-      Array(@personal_info.bio_pt)
+    if @personal_info.respond_to?(:bio)
+      Array(@personal_info.bio)
     else
       []
     end

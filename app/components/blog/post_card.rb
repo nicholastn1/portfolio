@@ -24,13 +24,13 @@ module Components
 
           # Title
           h3(class: "text-lg font-semibold text-white mb-2 group-hover:text-accent-green transition-colors") do
-            @post.title_pt
+            @post.title
           end
 
           # Description
-          if @post.description_pt.present?
+          if @post.description.present?
             p(class: "text-text-muted text-sm leading-relaxed mb-4 line-clamp-3") do
-              @post.description_pt
+              @post.description
             end
           end
 

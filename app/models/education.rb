@@ -1,6 +1,6 @@
 class Education < ApplicationRecord
   include Localizable
-  localized_field :degree, :course
+  localized_field :degree, :course, :activities
 
   validates :institution, presence: true
   validates :degree_pt, presence: true

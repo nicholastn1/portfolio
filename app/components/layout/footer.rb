@@ -16,7 +16,7 @@ module Components
                   span(class: "text-accent-green") { "?" }
                 end
                 p(class: "text-text-muted text-sm leading-relaxed max-w-md") do
-                  @personal_info.footer_text_pt
+                  @personal_info.footer_text
                 end
               end
 
