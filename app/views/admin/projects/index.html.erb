@@ -25,4 +25,8 @@
   </tbody>
 </table>
 
-<%== pagy_nav(@pagy) %>
+<% if @pagy.pages > 1 %>
+  <div class="mt-8">
+    <%== pagy_nav(@pagy) %>
+  </div>
+<% end %>
