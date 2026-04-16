@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile.dev
+    volumes:
+      - .:/rails
+      - bundle_cache:/usr/local/bundle
+      - node_modules:/rails/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - RAILS_ENV=development
+      - BINDING=0.0.0.0
+    stdin_open: true
+    tty: true
+    command: bin/dev
+
+volumes:
+  bundle_cache:
+  node_modules:

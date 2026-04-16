@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <title><%= content_for(:title) || "Nicholas Nogueira | Software Engineer" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="<%= content_for(:description) || "Portfolio de Nicholas Nogueira - Engenheiro de Software Full Stack" %>">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Nicholas Nogueira">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#141414">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%# JetBrains Mono font from Google Fonts %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="bg-bg-dark text-white font-mono antialiased min-h-screen">
+    <%= yield %>
+  </body>
+</html>
