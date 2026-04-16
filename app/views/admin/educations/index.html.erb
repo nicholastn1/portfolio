@@ -18,9 +18,11 @@
         <td class="py-3 text-sm text-text-muted border-b border-white/5"><%= education.institution %></td>
         <td class="py-3 text-sm text-text-muted border-b border-white/5"><%= education.degree_pt %></td>
         <td class="py-3 text-sm text-text-muted border-b border-white/5"><%= education.course_pt %></td>
-        <td class="py-3 text-sm border-b border-white/5 text-right space-x-3">
-          <%= link_to "Editar", edit_admin_education_path(education), class: "text-accent-green hover:underline text-sm" %>
-          <%= button_to "Excluir", admin_education_path(education), method: :delete, data: { turbo_confirm: "Tem certeza?" }, class: "text-red-400 hover:text-red-300 text-sm" %>
+        <td class="py-3 text-sm border-b border-white/5 text-right">
+          <div class="flex items-center justify-end gap-3">
+            <%= link_to "Editar", edit_admin_education_path(education), class: "text-accent-green hover:underline text-sm" %>
+            <%= button_to "Excluir", admin_education_path(education), method: :delete, form: { class: "inline" }, data: { turbo_confirm: "Tem certeza?" }, class: "text-red-400 hover:text-red-300 text-sm" %>
+          </div>
         </td>
       </tr>
     <% end %>

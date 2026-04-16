@@ -18,9 +18,11 @@
         <td class="py-3 text-sm text-text-muted border-b border-white/5"><%= language.name_pt %></td>
         <td class="py-3 text-sm text-text-muted border-b border-white/5"><%= language.level_pt %></td>
         <td class="py-3 text-sm text-text-muted border-b border-white/5"><%= language.proficiency %></td>
-        <td class="py-3 text-sm border-b border-white/5 text-right space-x-3">
-          <%= link_to "Editar", edit_admin_language_path(language), class: "text-accent-green hover:underline text-sm" %>
-          <%= button_to "Excluir", admin_language_path(language), method: :delete, data: { turbo_confirm: "Tem certeza?" }, class: "text-red-400 hover:text-red-300 text-sm" %>
+        <td class="py-3 text-sm border-b border-white/5 text-right">
+          <div class="flex items-center justify-end gap-3">
+            <%= link_to "Editar", edit_admin_language_path(language), class: "text-accent-green hover:underline text-sm" %>
+            <%= button_to "Excluir", admin_language_path(language), method: :delete, form: { class: "inline" }, data: { turbo_confirm: "Tem certeza?" }, class: "text-red-400 hover:text-red-300 text-sm" %>
+          </div>
         </td>
       </tr>
     <% end %>
