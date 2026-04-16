@@ -107,9 +107,44 @@
   background-clip: text;
 }
 
+/* Scroll animation classes */
+.animate-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Dark mode overrides */
 @media (prefers-color-scheme: dark) {
   :root:not(.light) {
     color-scheme: dark;
+  }
+}
+
+/* Light mode styles */
+.light {
+  --color-bg-dark: #ffffff;
+  --color-text-primary: #141414;
+  --color-text-secondary: #525252;
+  --color-text-muted: #737373;
+}
+
+.light body {
+  background-color: #ffffff;
+  color: #141414;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-hidden,
+  .animate-visible {
+    transition: none;
+    transform: none;
+    opacity: 1;
   }
 }
