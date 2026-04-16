@@ -1,0 +1,44 @@
+<%= render Components::Layout::Header.new(personal_info: PersonalInfo.instance) %>
+
+<main class="pt-24 pb-16">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <%# Header %>
+    <div class="mb-12">
+      <h1 class="text-4xl font-bold text-white mb-4">
+        Blog<span class="text-accent-green">.</span>
+      </h1>
+      <p class="text-text-muted text-lg max-w-2xl">
+        Artigos sobre desenvolvimento de software, arquitetura, e experiências na área de tecnologia.
+      </p>
+    </div>
+
+    <%# Category filters %>
+    <div class="flex flex-wrap gap-3 mb-8">
+      <%= link_to "Todos", posts_path, class: "px-4 py-2 rounded-full text-sm transition-all #{params[:category].blank? ? 'bg-accent-green text-bg-dark font-medium' : 'bg-white/5 text-text-muted hover:text-white border border-white/10'}" %>
+      <% %w[tech carreira].each do |cat| %>
+        <%= link_to cat.capitalize, posts_path(category: cat), class: "px-4 py-2 rounded-full text-sm transition-all #{params[:category] == cat ? 'bg-accent-green text-bg-dark font-medium' : 'bg-white/5 text-text-muted hover:text-white border border-white/10'}" %>
+      <% end %>
+    </div>
+
+    <%# Posts grid %>
+    <% if @posts.any? %>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <% @posts.each do |post| %>
+          <%= render Components::Blog::PostCard.new(post: post) %>
+        <% end %>
+      </div>
+
+      <%# Pagination %>
+      <div class="mt-12 flex justify-center">
+        <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+      </div>
+    <% else %>
+      <div class="text-center py-20">
+        <p class="text-text-muted text-lg">Nenhum post publicado ainda.</p>
+        <p class="text-text-muted text-sm mt-2">Em breve novos conteúdos!</p>
+      </div>
+    <% end %>
+  </div>
+</main>
+
+<%= render Components::Layout::Footer.new(personal_info: PersonalInfo.instance) %>

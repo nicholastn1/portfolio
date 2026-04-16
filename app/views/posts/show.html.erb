@@ -1,0 +1,66 @@
+<%= render Components::Layout::Header.new(personal_info: PersonalInfo.instance) %>
+
+<main class="pt-24 pb-16">
+  <article class="max-w-[900px] mx-auto px-6">
+    <%# Back link %>
+    <div class="mb-8">
+      <%= link_to posts_path, class: "text-text-muted hover:text-white transition-colors text-sm flex items-center gap-2" do %>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        Voltar ao blog
+      <% end %>
+    </div>
+
+    <%# Post header %>
+    <header class="mb-12">
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <span class="px-3 py-1 rounded-full bg-accent-green/10 text-accent-green text-xs font-medium">
+          <%= @post.category&.capitalize %>
+        </span>
+        <span class="text-text-muted text-sm">
+          <%= @post.published_at&.strftime("%d/%m/%Y") %>
+        </span>
+        <% if @post.reading_time %>
+          <span class="text-text-muted text-sm">
+            <%= @post.reading_time %> min de leitura
+          </span>
+        <% end %>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
+        <%= @post.title_pt %>
+      </h1>
+
+      <% if @post.description_pt.present? %>
+        <p class="text-text-muted text-lg leading-relaxed">
+          <%= @post.description_pt %>
+        </p>
+      <% end %>
+
+      <% if @post.tags.present? %>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <% @post.tags.each do |tag| %>
+            <span class="px-2 py-1 rounded-full bg-white/5 text-text-muted text-xs border border-white/10">
+              #<%= tag %>
+            </span>
+          <% end %>
+        </div>
+      <% end %>
+    </header>
+
+    <%# Post body (Action Text) %>
+    <div class="prose prose-invert prose-lg max-w-none
+                prose-headings:text-white prose-headings:font-bold
+                prose-p:text-text-muted prose-p:leading-relaxed
+                prose-a:text-accent-blue prose-a:no-underline hover:prose-a:underline
+                prose-code:text-accent-green prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
+                prose-pre:bg-white/5 prose-pre:border prose-pre:border-white/10
+                prose-strong:text-white
+                prose-li:text-text-muted">
+      <%= @post.body %>
+    </div>
+  </article>
+</main>
+
+<%= render Components::Layout::Footer.new(personal_info: PersonalInfo.instance) %>
