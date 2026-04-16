@@ -1,0 +1,30 @@
+<div class="flex items-center justify-between mb-8">
+  <h1 class="text-2xl font-bold text-white">Formacao</h1>
+  <%= link_to "Nova Formacao", new_admin_education_path, class: "px-4 py-2 rounded-lg bg-accent-green text-bg-dark text-sm font-medium hover:opacity-90 transition-opacity" %>
+</div>
+
+<table class="w-full">
+  <thead>
+    <tr>
+      <th class="text-left text-xs text-text-muted uppercase tracking-wider pb-3 border-b border-white/5">Instituicao</th>
+      <th class="text-left text-xs text-text-muted uppercase tracking-wider pb-3 border-b border-white/5">Grau</th>
+      <th class="text-left text-xs text-text-muted uppercase tracking-wider pb-3 border-b border-white/5">Curso</th>
+      <th class="text-left text-xs text-text-muted uppercase tracking-wider pb-3 border-b border-white/5"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @educations.each do |education| %>
+      <tr>
+        <td class="py-3 text-sm text-text-muted border-b border-white/5"><%= education.institution %></td>
+        <td class="py-3 text-sm text-text-muted border-b border-white/5"><%= education.degree_pt %></td>
+        <td class="py-3 text-sm text-text-muted border-b border-white/5"><%= education.course_pt %></td>
+        <td class="py-3 text-sm border-b border-white/5 text-right space-x-3">
+          <%= link_to "Editar", edit_admin_education_path(education), class: "text-accent-green hover:underline text-sm" %>
+          <%= button_to "Excluir", admin_education_path(education), method: :delete, data: { turbo_confirm: "Tem certeza?" }, class: "text-red-400 hover:text-red-300 text-sm" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%== pagy_nav(@pagy) %>

@@ -1,0 +1,64 @@
+<div class="flex items-center justify-between mb-8">
+  <h1 class="text-2xl font-bold text-white">Informacoes Pessoais</h1>
+  <%= link_to "Editar", edit_admin_personal_info_path, class: "px-4 py-2 rounded-lg bg-accent-green text-bg-dark text-sm font-medium hover:opacity-90 transition-opacity" %>
+</div>
+
+<div class="max-w-2xl space-y-6">
+  <% if @personal_info.profile_image.attached? %>
+    <div>
+      <%= image_tag @personal_info.profile_image, class: "w-24 h-24 rounded-full object-cover" %>
+    </div>
+  <% end %>
+
+  <div class="grid grid-cols-2 gap-6">
+    <div>
+      <p class="text-xs text-text-muted uppercase tracking-wider mb-1">Nome</p>
+      <p class="text-sm text-white"><%= @personal_info.name %></p>
+    </div>
+
+    <div>
+      <p class="text-xs text-text-muted uppercase tracking-wider mb-1">Titulo</p>
+      <p class="text-sm text-white"><%= @personal_info.title %></p>
+    </div>
+
+    <div>
+      <p class="text-xs text-text-muted uppercase tracking-wider mb-1">Localizacao</p>
+      <p class="text-sm text-white"><%= @personal_info.location %></p>
+    </div>
+
+    <div>
+      <p class="text-xs text-text-muted uppercase tracking-wider mb-1">Email</p>
+      <p class="text-sm text-white"><%= @personal_info.email %></p>
+    </div>
+
+    <div>
+      <p class="text-xs text-text-muted uppercase tracking-wider mb-1">Telefone</p>
+      <p class="text-sm text-white"><%= @personal_info.phone %></p>
+    </div>
+  </div>
+
+  <div class="border-t border-white/5 pt-6">
+    <p class="text-xs text-text-muted uppercase tracking-wider mb-2">Mensagem WhatsApp</p>
+    <p class="text-sm text-text-muted"><%= @personal_info.whatsapp_message %></p>
+  </div>
+
+  <div class="border-t border-white/5 pt-6">
+    <p class="text-xs text-text-muted uppercase tracking-wider mb-2">Bio (PT)</p>
+    <p class="text-sm text-text-muted whitespace-pre-line"><%= @personal_info.bio_pt&.join("\n\n") %></p>
+  </div>
+
+  <div class="border-t border-white/5 pt-6">
+    <p class="text-xs text-text-muted uppercase tracking-wider mb-2">Bio (EN)</p>
+    <p class="text-sm text-text-muted whitespace-pre-line"><%= @personal_info.bio_en&.join("\n\n") %></p>
+  </div>
+
+  <div class="border-t border-white/5 pt-6">
+    <p class="text-xs text-text-muted uppercase tracking-wider mb-2">Texto do Footer (PT)</p>
+    <p class="text-sm text-text-muted"><%= @personal_info.footer_text_pt %></p>
+  </div>
+
+  <div class="border-t border-white/5 pt-6">
+    <p class="text-xs text-text-muted uppercase tracking-wider mb-2">Texto do Footer (EN)</p>
+    <p class="text-sm text-text-muted"><%= @personal_info.footer_text_en %></p>
+  </div>
+</div>

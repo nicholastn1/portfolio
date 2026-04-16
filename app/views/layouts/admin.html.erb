@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <title>Admin | Nicholas Nogueira</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="bg-bg-dark text-white font-mono antialiased min-h-screen">
+    <% if current_admin %>
+      <div class="flex min-h-screen">
+        <%# Sidebar %>
+        <aside class="w-64 bg-bg-black/50 border-r border-white/5 flex flex-col shrink-0">
+          <div class="p-6 border-b border-white/5">
+            <a href="<%= admin_root_path %>" class="text-lg font-bold text-white">
+              Admin<span class="text-accent-green">.</span>
+            </a>
+          </div>
+
+          <nav class="flex-1 p-4 space-y-1">
+            <%= admin_nav_link "Dashboard", admin_root_path, "dashboard" %>
+            <%= admin_nav_link "Personal Info", admin_personal_info_path, "personal_info" %>
+            <%= admin_nav_link "Social Links", admin_social_links_path, "social_link" %>
+            <%= admin_nav_link "Experiences", admin_experiences_path, "experience" %>
+            <%= admin_nav_link "Education", admin_educations_path, "education" %>
+            <%= admin_nav_link "Certifications", admin_certifications_path, "certification" %>
+            <%= admin_nav_link "Volunteering", admin_volunteerings_path, "volunteering" %>
+            <%= admin_nav_link "Projects", admin_projects_path, "project" %>
+            <%= admin_nav_link "Skills", admin_skills_path, "skill" %>
+            <%= admin_nav_link "Languages", admin_languages_path, "language" %>
+            <%= admin_nav_link "Posts", admin_posts_path, "post" %>
+          </nav>
+
+          <div class="p-4 border-t border-white/5">
+            <div class="text-xs text-text-muted mb-2"><%= current_admin.name %></div>
+            <%= button_to "Logout", admin_logout_path, method: :delete, class: "text-xs text-text-muted hover:text-white transition-colors" %>
+          </div>
+        </aside>
+
+        <%# Main content %>
+        <main class="flex-1 overflow-y-auto">
+          <% if flash[:notice] %>
+            <div class="bg-accent-green/10 border border-accent-green/20 text-accent-green px-6 py-3 text-sm">
+              <%= flash[:notice] %>
+            </div>
+          <% end %>
+          <% if flash[:alert] %>
+            <div class="bg-red-500/10 border border-red-500/20 text-red-400 px-6 py-3 text-sm">
+              <%= flash[:alert] %>
+            </div>
+          <% end %>
+
+          <div class="p-8">
+            <%= yield %>
+          </div>
+        </main>
+      </div>
+    <% else %>
+      <%# Login layout (no sidebar) %>
+      <% if flash[:notice] %>
+        <div class="bg-accent-green/10 border border-accent-green/20 text-accent-green px-6 py-3 text-sm text-center">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="bg-red-500/10 border border-red-500/20 text-red-400 px-6 py-3 text-sm text-center">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+      <%= yield %>
+    <% end %>
+  </body>
+</html>
