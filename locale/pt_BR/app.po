@@ -78,3 +78,9 @@ msgstr "min de leitura"
 
 msgid "All"
 msgstr "Todos"
+
+msgid "Portfolio of Nicholas Nogueira - Full Stack Software Engineer"
+msgstr "Portfolio de Nicholas Nogueira - Engenheiro de Software Full Stack"
+
+msgid "Articles about software development, architecture, and experiences in the tech industry."
+msgstr "Artigos sobre desenvolvimento de software, arquitetura, e experiências na área de tecnologia."

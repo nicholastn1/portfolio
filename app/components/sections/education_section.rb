@@ -3,7 +3,8 @@
 module Components
   module Sections
     class EducationSection < Components::Base
-      MONTH_ABBREVS = %w[Jan Fev Mar Abr Mai Jun Jul Ago Set Out Nov Dez].freeze
+      MONTH_ABBREVS_PT = %w[Jan Fev Mar Abr Mai Jun Jul Ago Set Out Nov Dez].freeze
+      MONTH_ABBREVS_EN = %w[Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec].freeze
 
       PROFICIENCY_COLORS = {
         "native" => "bg-accent-green/10 text-accent-green border-accent-green/20",
@@ -42,7 +43,7 @@ module Components
 
       def render_section_title
         h2(class: "text-3xl md:text-4xl font-bold text-white mb-12") do
-          plain "Formação"
+          plain _("Education")
           span(class: "text-accent-green") { "." }
         end
       end
@@ -55,7 +56,7 @@ module Components
         div(class: "mb-16") do
           h3(class: "text-xl font-semibold text-white mb-6 flex items-center gap-2") do
             span(class: "text-accent-green") { "⎯" }
-            plain "Acadêmica"
+            plain _("Academic")
           end
 
           div(class: "space-y-8") do
@@ -103,7 +104,7 @@ module Components
         div(class: "mb-16") do
           h3(class: "text-xl font-semibold text-white mb-6 flex items-center gap-2") do
             span(class: "text-accent-green") { "⎯" }
-            plain "Certificações"
+            plain _("Certifications")
           end
 
           div(class: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4") do
@@ -140,7 +141,7 @@ module Components
         div(class: "mb-16") do
           h3(class: "text-xl font-semibold text-white mb-6 flex items-center gap-2") do
             span(class: "text-accent-green") { "⎯" }
-            plain "Voluntariado"
+            plain _("Volunteering")
           end
 
           div(class: "space-y-4") do
@@ -174,7 +175,7 @@ module Components
         div do
           h3(class: "text-xl font-semibold text-white mb-6 flex items-center gap-2") do
             span(class: "text-accent-green") { "⎯" }
-            plain "Idiomas"
+            plain _("Languages")
           end
 
           div(class: "flex flex-wrap gap-3") do
@@ -199,12 +200,13 @@ module Components
 
       def format_period(started_at, ended_at)
         start_str = format_date(started_at)
-        end_str = ended_at.present? ? format_date(ended_at) : "Presente"
+        end_str = ended_at.present? ? format_date(ended_at) : _("Present")
         "#{start_str} - #{end_str}"
       end
 
       def format_date(date)
-        "#{MONTH_ABBREVS[date.month - 1]} #{date.year}"
+        month_abbrevs = I18n.locale == :en ? MONTH_ABBREVS_EN : MONTH_ABBREVS_PT
+        "#{month_abbrevs[date.month - 1]} #{date.year}"
       end
     end
   end

@@ -3,7 +3,8 @@
 module Components
   module Sections
     class ExperienceSection < Components::Base
-      MONTH_ABBREVS = %w[Jan Fev Mar Abr Mai Jun Jul Ago Set Out Nov Dez].freeze
+      MONTH_ABBREVS_PT = %w[Jan Fev Mar Abr Mai Jun Jul Ago Set Out Nov Dez].freeze
+      MONTH_ABBREVS_EN = %w[Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec].freeze
 
       def initialize(experiences:)
         @experiences = experiences
@@ -26,7 +27,7 @@ module Components
 
       def render_section_title
         h2(class: "text-3xl md:text-4xl font-bold text-white mb-12") do
-          plain "Experiência"
+          plain _("Experience")
           span(class: "text-accent-green") { "." }
         end
       end
@@ -118,12 +119,13 @@ module Components
 
       def format_period(started_at, ended_at)
         start_str = format_date(started_at)
-        end_str = ended_at.present? ? format_date(ended_at) : "Presente"
+        end_str = ended_at.present? ? format_date(ended_at) : _("Present")
         "#{start_str} - #{end_str}"
       end
 
       def format_date(date)
-        "#{MONTH_ABBREVS[date.month - 1]} #{date.year}"
+        month_abbrevs = I18n.locale == :en ? MONTH_ABBREVS_EN : MONTH_ABBREVS_PT
+        "#{month_abbrevs[date.month - 1]} #{date.year}"
       end
     end
   end

@@ -78,7 +78,7 @@ class Components::Sections::HeroSection < Components::Base
         class: "inline-flex items-center px-8 py-3 rounded-lg text-base font-semibold " \
                "bg-gradient-primary text-bg-dark hover:opacity-90 transition-opacity duration-200"
       ) do
-        plain "Ver Projetos"
+        plain _("View Projects")
       end
 
       # "Entrar em Contato" button (WhatsApp)
@@ -90,7 +90,7 @@ class Components::Sections::HeroSection < Components::Base
                "border border-accent-green text-accent-green hover:bg-accent-green hover:text-bg-dark " \
                "transition-colors duration-200"
       ) do
-        plain "Entrar em Contato"
+        plain _("Get in Touch")
       end
     end
   end

@@ -60,12 +60,12 @@ module Components
         link_class = mobile ? "text-text-muted hover:text-white transition-colors text-sm" : "text-text-muted hover:text-white transition-colors text-sm"
 
         [
-          ["#about", "Sobre"],
-          ["#experience", "Experiência"],
-          ["#education", "Formação"],
-          ["#skills", "Skills"],
-          ["#projects", "Projetos"],
-          ["/blog", "Blog"]
+          ["#about", _("About")],
+          ["#experience", _("Experience")],
+          ["#education", _("Education")],
+          ["#skills", _("Skills")],
+          ["#projects", _("Projects")],
+          ["/blog", _("Blog")]
         ].each do |href, label|
           a(href: href, class: link_class) { label }
         end

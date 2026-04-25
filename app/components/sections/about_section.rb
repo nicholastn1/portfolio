@@ -23,7 +23,7 @@ class Components::Sections::AboutSection < Components::Base
   def render_section_title
     div(class: "mb-12 sm:mb-16", data: { scroll_animation_target: "element" }) do
       h2(class: "text-3xl sm:text-4xl md:text-5xl font-bold text-white") do
-        plain "Sobre Mim"
+        plain _("About Me")
         span(class: "text-accent-green") { plain "." }
       end
     end

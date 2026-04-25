@@ -8,7 +8,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
         </svg>
-        Voltar ao blog
+        <%= _("Back to blog") %>
       <% end %>
     </div>
 
@@ -23,18 +23,18 @@
         </span>
         <% if @post.reading_time %>
           <span class="text-text-muted text-sm">
-            <%= @post.reading_time %> min de leitura
+            <%= @post.reading_time %> <%= _("min read") %>
           </span>
         <% end %>
       </div>
 
       <h1 class="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
-        <%= @post.title_pt %>
+        <%= @post.title %>
       </h1>
 
-      <% if @post.description_pt.present? %>
+      <% if @post.description.present? %>
         <p class="text-text-muted text-lg leading-relaxed">
-          <%= @post.description_pt %>
+          <%= @post.description %>
         </p>
       <% end %>
 

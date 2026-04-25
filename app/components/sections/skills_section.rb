@@ -36,7 +36,7 @@ class Components::Sections::SkillsSection < Components::Base
     div(class: "mb-14") do
       div(class: "flex items-center gap-2 mb-5") do
         span(class: "text-accent-green text-sm") { star_icon }
-        h3(class: "text-lg font-semibold text-white") { "Destaques" }
+        h3(class: "text-lg font-semibold text-white") { _("Highlights") }
       end
 
       div(class: "flex flex-wrap gap-3") do

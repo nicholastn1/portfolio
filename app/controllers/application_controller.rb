@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
   def set_locale
     locale = params[:locale] || cookies[:locale] || extract_locale_from_accept_language || "pt"
     I18n.locale = locale.to_s.start_with?("en") ? :en : :pt
+    FastGettext.locale = I18n.locale == :en ? "en" : "pt_BR"
     cookies[:locale] = { value: I18n.locale.to_s, expires: 1.year.from_now }
   end
 

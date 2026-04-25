@@ -23,7 +23,7 @@ class Components::Sections::ProjectsSection < Components::Base
   def render_heading
     div(class: "mb-12") do
       h2(class: "text-3xl sm:text-4xl font-bold text-white") do
-        plain "Projetos"
+        plain _("Projects")
         span(class: "text-accent-green") { "." }
       end
     end
@@ -115,7 +115,7 @@ class Components::Sections::ProjectsSection < Components::Base
 
   def format_period(project)
     start_str = project.started_at&.strftime("%b %Y")
-    end_str = project.ended_at&.strftime("%b %Y") || "Atual"
+    end_str = project.ended_at&.strftime("%b %Y") || _("Present")
     "#{start_str} - #{end_str}"
   end
 

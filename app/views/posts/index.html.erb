@@ -8,13 +8,13 @@
         Blog<span class="text-accent-green">.</span>
       </h1>
       <p class="text-text-muted text-lg max-w-2xl">
-        Artigos sobre desenvolvimento de software, arquitetura, e experiências na área de tecnologia.
+        <%= _("Articles about software development, architecture, and experiences in the tech industry.") %>
       </p>
     </div>
 
     <%# Category filters %>
     <div class="flex flex-wrap gap-3 mb-8">
-      <%= link_to "Todos", posts_path, class: "px-4 py-2 rounded-full text-sm transition-all #{params[:category].blank? ? 'bg-accent-green text-bg-dark font-medium' : 'bg-white/5 text-text-muted hover:text-white border border-white/10'}" %>
+      <%= link_to _("All"), posts_path, class: "px-4 py-2 rounded-full text-sm transition-all #{params[:category].blank? ? 'bg-accent-green text-bg-dark font-medium' : 'bg-white/5 text-text-muted hover:text-white border border-white/10'}" %>
       <% %w[tech carreira].each do |cat| %>
         <%= link_to cat.capitalize, posts_path(category: cat), class: "px-4 py-2 rounded-full text-sm transition-all #{params[:category] == cat ? 'bg-accent-green text-bg-dark font-medium' : 'bg-white/5 text-text-muted hover:text-white border border-white/10'}" %>
       <% end %>
@@ -34,8 +34,8 @@
       </div>
     <% else %>
       <div class="text-center py-20">
-        <p class="text-text-muted text-lg">Nenhum post publicado ainda.</p>
-        <p class="text-text-muted text-sm mt-2">Em breve novos conteúdos!</p>
+        <p class="text-text-muted text-lg"><%= _("No posts published yet.") %></p>
+        <p class="text-text-muted text-sm mt-2"><%= _("New content coming soon!") %></p>
       </div>
     <% end %>
   </div>

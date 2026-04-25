@@ -12,7 +12,7 @@ module Components
               # Contact text
               div do
                 h3(class: "text-lg font-semibold text-white mb-4") do
-                  plain "Vamos conversar"
+                  plain _("Let's talk")
                   span(class: "text-accent-green") { "?" }
                 end
                 p(class: "text-text-muted text-sm leading-relaxed max-w-md") do
