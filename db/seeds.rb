@@ -1,9 +1,12 @@
 puts "Seeding database..."
 
 # Admin user
-admin = User.find_or_create_by!(email: "admin@nicholasnogueira.dev") do |u|
+admin_email = ENV.fetch("ADMIN_EMAIL", "admin@nicholasnogueira.dev")
+admin_password = ENV["ADMIN_PASSWORD"].presence ||
+  (Rails.env.production? ? raise("ADMIN_PASSWORD env var is required in production") : "changeme123")
+admin = User.find_or_create_by!(email: admin_email) do |u|
   u.name = "Nicholas Nogueira"
-  u.password = "changeme123"
+  u.password = admin_password
 end
 puts "  Admin user: #{admin.email}"
 
