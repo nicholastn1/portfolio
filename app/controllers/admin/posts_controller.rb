@@ -39,7 +39,9 @@ module Admin
     private
 
     def set_post
-      @post = Post.find(params[:id])
+      # Post#to_param returns the slug, so admin URLs like /admin/posts/hello-world/edit
+      # need to look up by slug, not by numeric id.
+      @post = Post.find_by!(slug: params[:id])
     end
 
     def post_params
