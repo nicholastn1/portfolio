@@ -41,8 +41,17 @@ Configuration:
 - **Negative:** Each uploaded image is one extra round-trip to R2 (mitigated by Rails' signed-URL caching and the user's tolerance — portfolio is low-traffic).
 - **Negative:** Bucket is shared with Coolify backups — accidental bulk-delete operations need to be path-aware. Mitigated by R2's per-prefix delete pattern.
 
+## R2 quirks worth knowing
+
+Two issues hit during the rollout that aren't documented in the AWS S3 SDK docs because they're R2-specific:
+
+1. **`request_checksum_calculation` must be `when_required`.** aws-sdk-s3 1.220+ defaults to `when_supported`, which adds CRC32C/CRC64NVME headers alongside SHA-256. R2 rejects with `InvalidRequest: You can only specify one non-default checksum at a time`. Fixed in `config/storage.yml`.
+
+2. **gettext_i18n_rails leaks `:"pt-BR"` into `I18n.locale`.** Active Storage's `ContentDisposition` calls `I18n.transliterate` on the upload filename. With `enforce_available_locales` on (production default), the `:"pt-BR"` locale must be in `I18n.available_locales` or the call raises `InvalidLocale` *before* the actual S3 PUT — but *after* the "Uploaded file to key" log line, so the error looks like a successful upload that vanishes. Fixed in `config/initializers/gettext.rb`.
+
 ## History
 
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | 2026-04-26 | Initial decision |
+| 1.1 | 2026-04-26 | Document the two R2-specific quirks discovered during rollout (checksum policy + I18n locale leak) |
