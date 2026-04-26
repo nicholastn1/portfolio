@@ -86,6 +86,14 @@ jobs:
         with:
           bundler-cache: true
 
+      - name: Cache bootsnap
+        uses: actions/cache@v4
+        with:
+          path: tmp/cache/bootsnap
+          key: bootsnap-${{ runner.os }}-${{ hashFiles('Gemfile.lock', '.ruby-version') }}
+          restore-keys: |
+            bootsnap-${{ runner.os }}-
+
       - name: Run tests
         env:
           RAILS_ENV: test

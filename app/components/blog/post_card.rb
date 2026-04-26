@@ -1,13 +1,15 @@
 module Components
   module Blog
     class PostCard < Components::Base
+      include Phlex::Rails::Helpers::ImageTag
+
       def initialize(post:)
         @post = post
       end
 
       def view_template
         a(
-          href: helpers.post_path(@post),
+          href: post_path(@post),
           class: "group block bg-white/[0.02] border border-white/5 rounded-xl overflow-hidden hover:border-accent-green/30 hover:bg-white/5 transition-all"
         ) do
           render_cover_image if @post.cover_image.attached?
@@ -25,7 +27,7 @@ module Components
 
       def render_cover_image
         div(class: "aspect-[16/9] overflow-hidden bg-white/5") do
-          raw helpers.image_tag(
+          image_tag(
             @post.cover_image,
             alt: @post.title,
             loading: "lazy",
