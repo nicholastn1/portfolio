@@ -2,7 +2,7 @@
 
 **Status:** Accepted
 **Date:** 2026-04-15
-**Version:** 1.0
+**Version:** 1.1
 
 ## Context
 
@@ -15,7 +15,7 @@ The admin panel needs authentication. Options considered:
 
 Use `has_secure_password` (bcrypt) with manual session management. A single `User` model stores credentials. `Admin::BaseController` runs `authenticate_admin!` as a `before_action` that checks `session[:admin_user_id]`.
 
-No password reset, no email confirmation, no OAuth — the admin user is seeded via `db:seed` with a default password.
+No password reset, no email confirmation, no OAuth — the admin user is seeded via `db:seed`. In development, a default password is used for convenience. In production, `db/seeds.rb` requires `ADMIN_PASSWORD` (and optionally `ADMIN_EMAIL`) environment variables and raises if `ADMIN_PASSWORD` is missing — this prevents shipping a known default password to production deployments.
 
 ## Consequences
 
@@ -30,3 +30,4 @@ No password reset, no email confirmation, no OAuth — the admin user is seeded 
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | 2026-04-15 | Initial decision |
+| 1.1 | 2026-04-25 | Admin password sourced from `ADMIN_PASSWORD` env var in production; dev keeps default for convenience. Required for Coolify deploy at `nicholastn.dev`. |
