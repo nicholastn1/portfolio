@@ -12,6 +12,16 @@
       <% end %>
     </div>
 
+    <%# Cover image %>
+    <% if @post.cover_image.attached? %>
+      <figure class="mb-10 -mx-6 md:mx-0 md:rounded-xl overflow-hidden border border-white/10">
+        <%= image_tag @post.cover_image,
+              alt: @post.title,
+              loading: "eager",
+              class: "w-full h-auto block" %>
+      </figure>
+    <% end %>
+
     <%# Post header %>
     <header class="mb-12">
       <div class="flex flex-wrap items-center gap-3 mb-4">

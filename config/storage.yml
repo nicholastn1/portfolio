@@ -9,13 +9,18 @@ local:
 # Cloudflare R2 (S3-compatible). Active in production when R2_BUCKET env is set.
 # See config/environments/production.rb for the feature-flag.
 #
+# Uses ActiveStorage::Service::PrefixedS3Service (custom subclass) so all
+# blobs land under `portfolio-uploads/` in the bucket, keeping them clearly
+# separated from Coolify backups (under `data/coolify/...`) when the same
+# R2 bucket is shared between both consumers.
+#
 # `request/response_checksum_calculation: when_required` is required for R2 —
 # the aws-sdk-s3 default ("when_supported") adds CRC32C/CRC64NVME headers that
 # R2 rejects with "InvalidRequest: You can only specify one non-default checksum
 # at a time" when the request also carries the SHA-256 it's already computing.
-# Also disable SSE — R2 enforces its own server-side encryption.
 r2:
-  service: S3
+  service: PrefixedS3
+  prefix: portfolio-uploads
   endpoint: <%= ENV["R2_ENDPOINT"] %>
   access_key_id: <%= ENV["R2_ACCESS_KEY_ID"] %>
   secret_access_key: <%= ENV["R2_SECRET_ACCESS_KEY"] %>
