@@ -8,6 +8,12 @@ local:
 
 # Cloudflare R2 (S3-compatible). Active in production when R2_BUCKET env is set.
 # See config/environments/production.rb for the feature-flag.
+#
+# `request/response_checksum_calculation: when_required` is required for R2 —
+# the aws-sdk-s3 default ("when_supported") adds CRC32C/CRC64NVME headers that
+# R2 rejects with "InvalidRequest: You can only specify one non-default checksum
+# at a time" when the request also carries the SHA-256 it's already computing.
+# Also disable SSE — R2 enforces its own server-side encryption.
 r2:
   service: S3
   endpoint: <%= ENV["R2_ENDPOINT"] %>
@@ -16,5 +22,5 @@ r2:
   region: auto
   bucket: <%= ENV["R2_BUCKET"] %>
   force_path_style: true
-  upload:
-    server_side_encryption: AES256
+  request_checksum_calculation: when_required
+  response_checksum_validation: when_required
