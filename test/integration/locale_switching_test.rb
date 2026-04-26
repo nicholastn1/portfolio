@@ -7,8 +7,8 @@ class LocaleSwitchingTest < ActionDispatch::IntegrationTest
       title: "Developer",
       email: "test@example.com",
       location: "Test City",
-      bio_pt: ["Bio em portugues"],
-      bio_en: ["Bio in English"],
+      bio_pt: [ "Bio em portugues" ],
+      bio_en: [ "Bio in English" ],
       footer_text_pt: "Texto do rodape em portugues",
       footer_text_en: "Footer text in English"
     )
@@ -19,8 +19,8 @@ class LocaleSwitchingTest < ActionDispatch::IntegrationTest
       role_en: "Software Engineer",
       description_pt: "Descricao em portugues",
       description_en: "Description in English",
-      achievements_pt: ["Conquista em portugues"],
-      achievements_en: ["Achievement in English"],
+      achievements_pt: [ "Conquista em portugues" ],
+      achievements_en: [ "Achievement in English" ],
       started_at: Date.new(2023, 1, 1),
       position: 1
     )

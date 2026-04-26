@@ -78,7 +78,7 @@ puts "  Social links created"
       "Lessened sellers' operational workload by 15 minutes per order by engineering an automated order segmentation flow within the B2B Ruby on Rails monolith and invoicing systems",
       "Prevented over 99.9% of duplicate order creations by implementing a robust SHA256 hash-based reference system in Ruby on Rails, saving an estimated $1,850+ annually"
     ],
-    technologies: ["Ruby on Rails", "Vue.js", "TypeScript", "PostgreSQL", "Redis", "Sidekiq", "Docker", "OpenAI API"],
+    technologies: [ "Ruby on Rails", "Vue.js", "TypeScript", "PostgreSQL", "Redis", "Sidekiq", "Docker", "OpenAI API" ],
     position: 1
   },
   {
@@ -102,7 +102,7 @@ puts "  Social links created"
       "Boosted support and development team delivery performance by 20% through active involvement in restructuring the development pipeline, incorporating Kanban and software engineering principles",
       "Reduced more than 40% of customer complaints by resolving system bugs, achieving a 100% validation rate for fixes"
     ],
-    technologies: ["Ruby on Rails", "GraphQL", "Redis", "Microsserviços", "CI/CD", "Jira", "Basecamp"],
+    technologies: [ "Ruby on Rails", "GraphQL", "Redis", "Microsserviços", "CI/CD", "Jira", "Basecamp" ],
     position: 2
   },
   {
@@ -122,7 +122,7 @@ puts "  Social links created"
       "Reduced system complexity and maintenance difficulties by 40% by simplifying the development process alongside the Software Architects team through the utilization of SOLID and Clean Architecture principles",
       "Enabled processes to be performed more quickly through the recreation of the internal administrative system, resulting in a performance improvement of approximately 30% compared to the old system"
     ],
-    technologies: ["C#", ".NET", "ReactJS", "Redux", "SQL Server", "Azure DevOps", "SOLID", "Clean Architecture", "Microservices"],
+    technologies: [ "C#", ".NET", "ReactJS", "Redux", "SQL Server", "Azure DevOps", "SOLID", "Clean Architecture", "Microservices" ],
     position: 3
   },
   {
@@ -142,7 +142,7 @@ puts "  Social links created"
       "Increased a 100% in flow consistency by implementing key features for the accounting module of the system, such as a review control system that mitigated possible bypasses",
       "Streamlined the bidding process with a simplified creation flow, resulting in a 40% increase in speed for clients in multiple municipalities"
     ],
-    technologies: ["Ruby on Rails", "PostgreSQL", "HTML", "CSS", "JavaScript", "Git"],
+    technologies: [ "Ruby on Rails", "PostgreSQL", "HTML", "CSS", "JavaScript", "Git" ],
     position: 4
   }
 ].each do |attrs|
@@ -161,8 +161,8 @@ Education.find_or_create_by!(institution: "Centro Universitário Farias Brito") 
     course_en: "Computer Science",
     started_at: Date.new(2020, 1, 1),
     ended_at: nil,
-    activities_pt: ["Membro do Centro Acadêmico (AC)", "Assessor de Projetos (2022-2023)"],
-    activities_en: ["Academic Center (AC) member", "Projects Advisor (2022-2023)"],
+    activities_pt: [ "Membro do Centro Acadêmico (AC)", "Assessor de Projetos (2022-2023)" ],
+    activities_en: [ "Academic Center (AC) member", "Projects Advisor (2022-2023)" ],
     position: 1
   )
 end
@@ -206,7 +206,7 @@ puts "  #{Volunteering.count} volunteering records created"
     description_en: "Platform for searching tech jobs and managing applications with intelligent tracking. Features a Kanban board with drag & drop, AI-powered tailored CV generation (GPT-4), automatic job scraping, and internationalization support (PT-BR/EN-US).",
     started_at: Date.new(2025, 12, 1),
     ended_at: nil,
-    technologies: ["Next.js", "NestJS", "TypeScript", "PostgreSQL", "Prisma", "Redis", "OpenAI API", "Fly.io"],
+    technologies: [ "Next.js", "NestJS", "TypeScript", "PostgreSQL", "Prisma", "Redis", "OpenAI API", "Fly.io" ],
     github_url: "https://github.com/nicholastn1/nebula-frontend",
     position: 1
   },
@@ -216,7 +216,7 @@ puts "  #{Volunteering.count} volunteering records created"
     description_en: "Personal infrastructure project built from an old laptop that was gathering dust. Initially used as a learning environment for Kubernetes, IaC, networking, and automation. Now runs Proxmox with a Coolify VM and GPU PCI passthrough for running LLM models like Whisper and Ollama in personal conversation projects.",
     started_at: Date.new(2025, 1, 1),
     ended_at: nil,
-    technologies: ["Proxmox", "Coolify", "Docker", "Kubernetes", "IaC", "LLM", "Whisper", "Ollama"],
+    technologies: [ "Proxmox", "Coolify", "Docker", "Kubernetes", "IaC", "LLM", "Whisper", "Ollama" ],
     github_url: "https://github.com/nicholastn1/coolify-backup",
     position: 2
   },
@@ -226,7 +226,7 @@ puts "  #{Volunteering.count} volunteering records created"
     description_en: "GymGenius is a project that aims to solve a personal problem but can be applied to anyone with similar needs. The goal is to allow users to manage and organize their workout routine in a personalized way, avoiding paid solutions that are often superficial.",
     started_at: Date.new(2023, 5, 1),
     ended_at: nil,
-    technologies: ["Ruby", "React.js", "AI", "OpenAI API", "AWS", "MCP"],
+    technologies: [ "Ruby", "React.js", "AI", "OpenAI API", "AWS", "MCP" ],
     github_url: "https://github.com/nicholastn1/gymgeniusweb",
     position: 3
   },
@@ -236,7 +236,7 @@ puts "  #{Volunteering.count} volunteering records created"
     description_en: "Personal portfolio project created to showcase my knowledge and present some of my characteristics and interests, as well as professional information and skills.",
     started_at: Date.new(2022, 5, 1),
     ended_at: nil,
-    technologies: ["Ruby on Rails", "Phlex", "Tailwind CSS", "SQLite", "Hotwire"],
+    technologies: [ "Ruby on Rails", "Phlex", "Tailwind CSS", "SQLite", "Hotwire" ],
     github_url: "https://github.com/nicholastn1/nicholastn1.github.io",
     url: "https://nicholastn1.github.io",
     position: 4
