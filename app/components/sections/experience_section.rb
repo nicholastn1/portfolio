@@ -98,9 +98,9 @@ module Components
           end
 
           p(
-            class: "mono-data text-signal mb-5",
+            class: "mono-data text-signal mb-5 uppercase",
             style: "letter-spacing: 0.04em;"
-          ) { plain experience.role.to_s.upcase }
+          ) { plain experience.role.to_s }
 
           if experience.description.present?
             p(

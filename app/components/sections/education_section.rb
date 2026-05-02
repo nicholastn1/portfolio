@@ -83,8 +83,8 @@ module Components
                 class: "font-display text-ink text-[1.1rem] md:text-[1.25rem] leading-tight",
                 style: "font-variation-settings: 'wdth' 100, 'opsz' 32; font-weight: 600;"
               ) { plain education.institution }
-              p(class: "mono-data text-signal mt-1", style: "letter-spacing: 0.04em;") do
-                plain "#{education.degree.to_s.upcase} · #{education.course}"
+              p(class: "mono-data text-signal mt-1 uppercase", style: "letter-spacing: 0.04em;") do
+                plain "#{education.degree} · #{education.course}"
               end
             end
             span(class: "mono-data text-ink-mute whitespace-nowrap shrink-0") do

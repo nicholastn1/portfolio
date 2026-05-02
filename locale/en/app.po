@@ -24,9 +24,8 @@ msgstr "Academic"
 msgid "All"
 msgstr "All"
 
-#, fuzzy
 msgid "All rights reserved, all errors mine."
-msgstr "All"
+msgstr "All rights reserved, all errors mine."
 
 msgid "An index"
 msgstr ""
