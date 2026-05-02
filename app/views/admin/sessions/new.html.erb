@@ -1,30 +1,38 @@
-<div class="min-h-screen flex items-center justify-center">
+<div class="min-h-screen flex items-center justify-center px-6">
   <div class="w-full max-w-sm">
-    <div class="text-center mb-8">
-      <h1 class="text-2xl font-bold text-white">
-        Admin<span class="text-accent-green">.</span>
-      </h1>
-      <p class="text-text-muted text-sm mt-2">Faça login para acessar o painel</p>
+    <%# Brand %>
+    <div class="flex items-center justify-center gap-3 mb-3">
+      <%= image_tag "logo-mark.svg", class: "block w-10 h-10", width: 40, height: 40, alt: "NN" %>
+      <div class="flex flex-col leading-none gap-1">
+        <span class="font-display text-ink text-[1rem]" style="font-weight: 600;">Admin</span>
+        <span class="font-mono text-[0.6rem] tracking-[0.18em] uppercase text-ink-mute">Control / NN</span>
+      </div>
     </div>
 
-    <%= form_with url: admin_login_path, method: :post, class: "space-y-4" do |f| %>
+    <div class="font-mono text-[0.65rem] tracking-[0.18em] uppercase text-ink-mute text-center mb-8">
+      <span class="text-signal">§</span> Restricted access
+    </div>
+
+    <%# Form %>
+    <%= form_with url: admin_login_path, method: :post, class: "space-y-5" do |f| %>
       <div>
-        <label for="email" class="block text-sm text-text-muted mb-1">Email</label>
+        <label for="email" class="block font-mono text-[0.65rem] tracking-[0.14em] uppercase text-ink-mute mb-2">Email</label>
         <input type="email" name="email" id="email" required autofocus
-               class="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-accent-green/50 focus:ring-1 focus:ring-accent-green/50 transition-all">
+               class="w-full px-3 py-2.5 bg-paper-deep border border-rule text-ink text-[0.95rem] focus:outline-none focus:border-ink focus:ring-1 focus:ring-signal/30 transition-all">
       </div>
       <div>
-        <label for="password" class="block text-sm text-text-muted mb-1">Senha</label>
+        <label for="password" class="block font-mono text-[0.65rem] tracking-[0.14em] uppercase text-ink-mute mb-2">Password</label>
         <input type="password" name="password" id="password" required
-               class="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-accent-green/50 focus:ring-1 focus:ring-accent-green/50 transition-all">
+               class="w-full px-3 py-2.5 bg-paper-deep border border-rule text-ink text-[0.95rem] focus:outline-none focus:border-ink focus:ring-1 focus:ring-signal/30 transition-all">
       </div>
-      <button type="submit" class="w-full py-2.5 rounded-lg bg-gradient-primary text-white text-sm font-medium hover:opacity-90 transition-opacity">
-        Entrar
+      <button type="submit"
+              class="w-full py-2.5 bg-ink text-paper font-mono text-[0.7rem] tracking-[0.18em] uppercase hover:bg-signal transition-colors flex items-center justify-center gap-2">
+        Sign in <span>→</span>
       </button>
     <% end %>
 
-    <div class="text-center mt-6">
-      <a href="/" class="text-text-muted text-xs hover:text-white transition-colors">Voltar ao site</a>
+    <div class="text-center mt-8 pt-6 border-t border-rule">
+      <%= link_to "← Back to site", root_path, class: "font-mono text-[0.65rem] tracking-[0.14em] uppercase text-ink-mute hover:text-signal transition-colors" %>
     </div>
   </div>
 </div>

@@ -1,36 +1,36 @@
 <div class="flex items-center justify-between mb-8">
-  <h1 class="text-2xl font-bold text-white">Posts</h1>
-  <%= link_to "Novo Post", new_admin_post_path, class: "px-4 py-2 rounded-lg bg-accent-green text-bg-dark text-sm font-medium hover:opacity-90 transition-opacity" %>
+  <h1 class="text-2xl font-bold text-ink">Posts</h1>
+  <%= link_to "Novo Post", new_admin_post_path, class: "px-4 py-2 bg-signal text-paper text-sm font-medium hover:opacity-90 transition-opacity" %>
 </div>
 
 <table class="w-full">
   <thead>
     <tr>
-      <th class="text-left text-xs text-text-muted uppercase tracking-wider pb-3 border-b border-white/5">Titulo</th>
-      <th class="text-left text-xs text-text-muted uppercase tracking-wider pb-3 border-b border-white/5">Categoria</th>
-      <th class="text-left text-xs text-text-muted uppercase tracking-wider pb-3 border-b border-white/5">Status</th>
-      <th class="text-left text-xs text-text-muted uppercase tracking-wider pb-3 border-b border-white/5">Publicado em</th>
-      <th class="text-left text-xs text-text-muted uppercase tracking-wider pb-3 border-b border-white/5"></th>
+      <th class="text-left text-xs text-ink-mute uppercase tracking-wider pb-3 border-b border-rule">Titulo</th>
+      <th class="text-left text-xs text-ink-mute uppercase tracking-wider pb-3 border-b border-rule">Categoria</th>
+      <th class="text-left text-xs text-ink-mute uppercase tracking-wider pb-3 border-b border-rule">Status</th>
+      <th class="text-left text-xs text-ink-mute uppercase tracking-wider pb-3 border-b border-rule">Publicado em</th>
+      <th class="text-left text-xs text-ink-mute uppercase tracking-wider pb-3 border-b border-rule"></th>
     </tr>
   </thead>
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td class="py-3 text-sm text-text-muted border-b border-white/5"><%= post.title_pt %></td>
-        <td class="py-3 text-sm text-text-muted border-b border-white/5">
-          <span class="px-2 py-0.5 rounded-full text-xs bg-white/5 border border-white/10"><%= post.category&.capitalize %></span>
+        <td class="py-3 text-sm text-ink-mute border-b border-rule"><%= post.title_pt %></td>
+        <td class="py-3 text-sm text-ink-mute border-b border-rule">
+          <span class="px-2 py-0.5 rounded-full text-xs bg-paper-deep border border-rule"><%= post.category&.capitalize %></span>
         </td>
-        <td class="py-3 text-sm border-b border-white/5">
+        <td class="py-3 text-sm border-b border-rule">
           <% if post.published? %>
-            <span class="px-2 py-0.5 rounded-full text-xs bg-accent-green/10 text-accent-green border border-accent-green/20">Publicado</span>
+            <span class="px-2 py-0.5 rounded-full text-xs bg-signal/10 text-signal border border-signal/20">Publicado</span>
           <% else %>
-            <span class="px-2 py-0.5 rounded-full text-xs bg-white/5 text-text-muted border border-white/10">Rascunho</span>
+            <span class="px-2 py-0.5 rounded-full text-xs bg-paper-deep text-ink-mute border border-rule">Rascunho</span>
           <% end %>
         </td>
-        <td class="py-3 text-sm text-text-muted border-b border-white/5"><%= post.published_at&.strftime("%d/%m/%Y %H:%M") %></td>
-        <td class="py-3 text-sm border-b border-white/5 text-right">
+        <td class="py-3 text-sm text-ink-mute border-b border-rule"><%= post.published_at&.strftime("%d/%m/%Y %H:%M") %></td>
+        <td class="py-3 text-sm border-b border-rule text-right">
           <div class="flex items-center justify-end gap-3">
-            <%= link_to "Editar", edit_admin_post_path(post), class: "text-accent-green hover:underline text-sm" %>
+            <%= link_to "Editar", edit_admin_post_path(post), class: "text-signal hover:underline text-sm" %>
             <%= button_to "Excluir", admin_post_path(post), method: :delete, form: { class: "inline" }, data: { turbo_confirm: "Tem certeza?" }, class: "text-red-400 hover:text-red-300 text-sm" %>
           </div>
         </td>

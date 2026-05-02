@@ -23,7 +23,8 @@ module Admin
     def personal_info_params
       permitted = params.require(:personal_info).permit(
         :name, :title, :location, :email, :phone, :whatsapp_message,
-        :bio_pt, :bio_en, :footer_text_pt, :footer_text_en, :profile_image
+        :bio_pt, :bio_en, :tagline_pt, :tagline_en,
+        :footer_text_pt, :footer_text_en, :profile_image
       )
 
       permitted[:bio_pt] = permitted[:bio_pt].split("\n").map(&:strip).reject(&:blank?) if permitted[:bio_pt].is_a?(String)

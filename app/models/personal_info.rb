@@ -1,6 +1,6 @@
 class PersonalInfo < ApplicationRecord
   include Localizable
-  localized_field :bio, :footer_text
+  localized_field :bio, :footer_text, :tagline
 
   has_one_attached :profile_image
   has_many :social_links, dependent: :destroy

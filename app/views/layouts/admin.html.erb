@@ -1,65 +1,90 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+<html lang="pt-BR">
   <head>
-    <title>Admin | Nicholas Nogueira</title>
+    <title>Admin · Nicholas Nogueira</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#161512">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+
+    <%# Bricolage Grotesque + JetBrains Mono — same fonts as the public site %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-bg-dark text-white font-mono antialiased min-h-screen">
+  <body class="bg-paper text-ink-soft antialiased min-h-screen" style="font-family: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;">
     <% if current_admin %>
       <div class="flex min-h-screen">
-        <%# Sidebar %>
-        <aside class="w-64 bg-bg-black/50 border-r border-white/5 flex flex-col shrink-0">
-          <div class="p-6 border-b border-white/5">
-            <a href="<%= admin_root_path %>" class="text-lg font-bold text-white">
-              Admin<span class="text-accent-green">.</span>
-            </a>
+        <%# Sidebar — dark graphite, sticky, with section grouping %>
+        <aside class="w-64 bg-ink flex flex-col shrink-0 sticky top-0 h-screen">
+          <%# Brand %>
+          <div class="px-5 py-5 border-b border-paper/10 flex items-center gap-3">
+            <%= image_tag "logo-mark.svg", class: "block w-8 h-8 shrink-0", width: 32, height: 32, alt: "NN" %>
+            <div class="flex flex-col leading-none gap-1">
+              <span class="text-paper text-[0.85rem] font-semibold">Admin</span>
+              <span class="font-mono text-[0.6rem] tracking-[0.18em] text-paper/40 uppercase">Control / NN</span>
+            </div>
           </div>
 
-          <nav class="flex-1 p-4 space-y-1">
-            <%= admin_nav_link "Dashboard", admin_root_path, "dashboard" %>
-            <%= admin_nav_link "Personal Info", admin_personal_info_path, "personal_info" %>
-            <%= admin_nav_link "Social Links", admin_social_links_path, "social_link" %>
-            <%= admin_nav_link "Experiences", admin_experiences_path, "experience" %>
-            <%= admin_nav_link "Education", admin_educations_path, "education" %>
-            <%= admin_nav_link "Certifications", admin_certifications_path, "certification" %>
-            <%= admin_nav_link "Volunteering", admin_volunteerings_path, "volunteering" %>
-            <%= admin_nav_link "Projects", admin_projects_path, "project" %>
-            <%= admin_nav_link "Skills", admin_skills_path, "skill" %>
-            <%= admin_nav_link "Languages", admin_languages_path, "language" %>
-            <%= admin_nav_link "Posts", admin_posts_path, "post" %>
+          <nav class="flex-1 overflow-y-auto py-3">
+            <%= admin_section_label "§ Content" %>
+            <%= admin_nav_link "Personal Info",  admin_personal_info_path,  "personal_info", section_id: "01" %>
+            <%= admin_nav_link "Social Links",   admin_social_links_path,   "social_link",   section_id: "02" %>
+            <%= admin_nav_link "Experience",     admin_experiences_path,    "experience",    section_id: "03" %>
+            <%= admin_nav_link "Education",      admin_educations_path,     "education",     section_id: "04" %>
+            <%= admin_nav_link "Certifications", admin_certifications_path, "certification", section_id: "05" %>
+            <%= admin_nav_link "Volunteering",   admin_volunteerings_path,  "volunteering",  section_id: "06" %>
+
+            <%= admin_section_label "§ Work" %>
+            <%= admin_nav_link "Projects", admin_projects_path,  "project",  section_id: "07" %>
+            <%= admin_nav_link "Skills",   admin_skills_path,    "skill",    section_id: "08" %>
+            <%= admin_nav_link "Languages", admin_languages_path, "language", section_id: "09" %>
+
+            <%= admin_section_label "§ Journal" %>
+            <%= admin_nav_link "Posts", admin_posts_path, "post", section_id: "10" %>
+
+            <%= admin_section_label "§ Overview" %>
+            <%= admin_nav_link "Dashboard", admin_root_path, "dashboard", section_id: "00" %>
           </nav>
 
-          <div class="p-4 border-t border-white/5">
-            <div class="text-xs text-text-muted mb-2"><%= current_admin.name %></div>
-            <%= button_to "Logout", admin_logout_path, method: :delete, class: "text-xs text-text-muted hover:text-white transition-colors" %>
+          <%# User block %>
+          <div class="border-t border-paper/10 p-4">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-signal"></span>
+              <span class="font-mono text-[0.7rem] tracking-[0.04em] text-paper/80"><%= current_admin.name %></span>
+            </div>
+            <div class="flex items-center justify-between">
+              <%= link_to "View site →", root_path, target: "_blank", class: "font-mono text-[0.65rem] tracking-[0.14em] uppercase text-paper/50 hover:text-signal transition-colors" %>
+              <%= button_to admin_logout_path, method: :delete, class: "font-mono text-[0.65rem] tracking-[0.14em] uppercase text-paper/50 hover:text-signal transition-colors" do %>
+                Logout
+              <% end %>
+            </div>
           </div>
         </aside>
 
         <%# Main content %>
         <main class="flex-1 overflow-y-auto">
           <% if flash[:notice] %>
-            <div class="bg-accent-green/10 border border-accent-green/20 text-accent-green px-6 py-3 text-sm">
-              <%= flash[:notice] %>
+            <div class="px-8 py-3 border-b border-rule bg-signal/5 flex items-center gap-3">
+              <span class="font-mono text-[0.65rem] tracking-[0.18em] uppercase text-signal">OK</span>
+              <span class="text-sm text-ink"><%= flash[:notice] %></span>
             </div>
           <% end %>
           <% if flash[:alert] %>
-            <div class="bg-red-500/10 border border-red-500/20 text-red-400 px-6 py-3 text-sm">
-              <%= flash[:alert] %>
+            <div class="px-8 py-3 border-b border-rule bg-red-500/5 flex items-center gap-3">
+              <span class="font-mono text-[0.65rem] tracking-[0.18em] uppercase text-red-600">ERR</span>
+              <span class="text-sm text-ink"><%= flash[:alert] %></span>
             </div>
           <% end %>
 
-          <div class="p-8">
+          <div class="px-8 py-10 max-w-[1200px]">
             <%= yield %>
           </div>
         </main>
@@ -67,14 +92,10 @@
     <% else %>
       <%# Login layout (no sidebar) %>
       <% if flash[:notice] %>
-        <div class="bg-accent-green/10 border border-accent-green/20 text-accent-green px-6 py-3 text-sm text-center">
-          <%= flash[:notice] %>
-        </div>
+        <div class="px-6 py-3 border-b border-rule bg-signal/5 text-sm text-ink text-center"><%= flash[:notice] %></div>
       <% end %>
       <% if flash[:alert] %>
-        <div class="bg-red-500/10 border border-red-500/20 text-red-400 px-6 py-3 text-sm text-center">
-          <%= flash[:alert] %>
-        </div>
+        <div class="px-6 py-3 border-b border-rule bg-red-500/5 text-sm text-ink text-center"><%= flash[:alert] %></div>
       <% end %>
       <%= yield %>
     <% end %>
