@@ -1,15 +1,39 @@
 <!DOCTYPE html>
-<html lang="<%= I18n.locale.to_s.start_with?('pt') ? 'pt-BR' : 'en' %>" class="dark">
+<html lang="<%= I18n.locale.to_s.start_with?('pt') ? 'pt-BR' : 'en' %>">
   <head>
-    <title><%= content_for(:title) || "Nicholas Nogueira | Software Engineer" %></title>
+    <% page_title       = content_for(:title).presence       || "Nicholas Nogueira — Software Engineer" %>
+    <% page_description = content_for(:description).presence || _("Portfolio of Nicholas Nogueira — Software Engineer focused on system architecture, performance, and AI-augmented software development.") %>
+    <% page_image       = content_for(:og_image).presence    || asset_url("og-image.jpg") rescue request.base_url + "/og-image.jpg" %>
+    <% canonical_url    = request.original_url rescue request.url %>
+
+    <title><%= page_title %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="<%= content_for(:description) || _("Portfolio of Nicholas Nogueira - Full Stack Software Engineer") %>">
+    <meta name="description" content="<%= page_description %>">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Nicholas Nogueira">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#141414">
+    <meta name="theme-color" content="#F2F0EA">
+    <link rel="canonical" href="<%= canonical_url %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <%# Open Graph / Facebook / LinkedIn / WhatsApp %>
+    <meta property="og:type" content="<%= content_for(:og_type).presence || 'website' %>">
+    <meta property="og:site_name" content="Nicholas Nogueira">
+    <meta property="og:title" content="<%= page_title %>">
+    <meta property="og:description" content="<%= page_description %>">
+    <meta property="og:url" content="<%= canonical_url %>">
+    <meta property="og:image" content="<%= page_image %>">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Nicholas Nogueira — Software Engineer">
+    <meta property="og:locale" content="<%= I18n.locale.to_s.start_with?('pt') ? 'pt_BR' : 'en_US' %>">
+
+    <%# Twitter / X %>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<%= page_title %>">
+    <meta name="twitter:description" content="<%= page_description %>">
+    <meta name="twitter:image" content="<%= page_image %>">
 
     <%= yield :head %>
 
@@ -18,21 +42,21 @@
     <link rel="alternate" hreflang="en" href="<%= root_url(locale: 'en') rescue localized_root_url(locale: 'en') %>">
     <link rel="alternate" hreflang="x-default" href="<%= root_url(locale: nil) %>">
 
-    <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
+    <link rel="icon" href="/icon.png" type="image/png" sizes="512x512">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
 
-    <%# JetBrains Mono font from Google Fonts %>
+    <%# Bricolage Grotesque (variable: opsz, wdth, weight) + JetBrains Mono %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-bg-dark text-white font-mono antialiased min-h-screen">
+  <body class="paper-grain min-h-screen">
     <%= yield %>
   </body>
 </html>

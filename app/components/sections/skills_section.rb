@@ -10,91 +10,96 @@ class Components::Sections::SkillsSection < Components::Base
   def view_template
     section(
       id: "skills",
-      class: "py-20 sm:py-28 bg-bg-dark",
+      class: "relative py-20 md:py-24",
       data: { controller: "scroll-animation" }
     ) do
-      div(class: "max-w-[1200px] mx-auto px-6") do
-        render_heading
-        render_featured_skills if @featured_skills.any?
-        render_skills_by_category
+      div(class: "max-w-[1200px] mx-auto px-6 md:px-10") do
+        render_header
+        render_featured if @featured_skills.any?
+        render_taxonomy
       end
     end
   end
 
   private
 
-  def render_heading
-    div(class: "mb-12") do
-      h2(class: "text-3xl sm:text-4xl font-bold text-white") do
-        plain "Skills"
-        span(class: "text-accent-green") { "." }
+  def render_header
+    div(
+      class: "flex items-end justify-between gap-4 pb-5 mb-12 border-b border-ink flex-wrap",
+      data: { scroll_animation_target: "element" }
+    ) do
+      div do
+        div(class: "section-id mb-2") { plain "§04" }
+        h2(
+          class: "font-display text-ink display-wide leading-none",
+          style: "font-size: clamp(2.25rem, 4.8vw, 3.5rem); font-weight: 600;"
+        ) { plain _("Stack") }
+      end
+      span(class: "mono-id text-ink-mute") do
+        plain "#{@skills.length.to_s.rjust(2, '0')} / #{_('tools')}"
       end
     end
   end
 
-  def render_featured_skills
-    div(class: "mb-14") do
-      div(class: "flex items-center gap-2 mb-5") do
-        span(class: "text-accent-green text-sm") { star_icon }
-        h3(class: "text-lg font-semibold text-white") { _("Highlights") }
+  def render_featured
+    div(
+      class: "grid grid-cols-12 gap-x-6 mb-12 pb-10 border-b border-rule",
+      data: { scroll_animation_target: "element" }
+    ) do
+      div(class: "col-span-12 md:col-span-3 mb-3 md:mb-0") do
+        div(class: "section-id mb-1") { plain "PRIMARY" }
+        h3(
+          class: "font-display text-ink text-[1.15rem]",
+          style: "font-weight: 600;"
+        ) { plain _("Daily drivers") }
       end
 
-      div(class: "flex flex-wrap gap-3") do
-        @featured_skills.each do |skill|
-          div(class: "relative group") do
-            render Components::Ui::Badge.new(
-              text: skill.name,
-              category: skill.category,
-              size: :sm
-            )
+      div(class: "col-span-12 md:col-span-9") do
+        div(class: "flex flex-wrap gap-2") do
+          @featured_skills.each do |skill|
+            span(class: "chip chip-strong text-[0.75rem] px-3 py-1.5") { plain skill.name.to_s.downcase }
           end
         end
       end
     end
   end
 
-  def render_skills_by_category
-    div(class: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8") do
-      @grouped_skills.each do |category, skills|
-        render_category_group(category, skills)
-      end
-    end
-  end
-
-  def render_category_group(category, skills)
+  def render_taxonomy
     div(
-      class: "rounded-xl bg-white/5 border border-white/5 p-5 " \
-             "hover:border-accent-green/30 transition-colors duration-300"
+      class: "grid grid-cols-12 gap-x-6",
+      data: { scroll_animation_target: "element" }
     ) do
-      h3(class: "text-sm font-semibold text-text-muted uppercase tracking-wider mb-4") do
-        plain category.capitalize
+      div(class: "col-span-12 md:col-span-3 mb-3 md:mb-0") do
+        div(class: "section-id mb-1") { plain "FULL" }
+        h3(
+          class: "font-display text-ink text-[1.15rem]",
+          style: "font-weight: 600;"
+        ) { plain _("By category") }
       end
 
-      div(class: "flex flex-wrap gap-2") do
-        skills.each do |skill|
-          render Components::Ui::Badge.new(
-            text: skill.name,
-            category: skill.category,
-            size: :xs
-          )
+      div(class: "col-span-12 md:col-span-9 divide-y divide-rule") do
+        @grouped_skills.sort_by { |cat, _| cat.to_s }.each do |category, skills|
+          render_category_row(category, skills)
         end
       end
     end
   end
 
-  def star_icon
-    svg(
-      xmlns: "http://www.w3.org/2000/svg",
-      class: "w-4 h-4",
-      fill: "currentColor",
-      viewBox: "0 0 20 20"
-    ) do |s|
-      s.path(
-        d: "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 " \
-           "1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 " \
-           "1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 " \
-           "1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-      )
+  def render_category_row(category, skills)
+    sorted = skills.sort_by { |s| s.name.to_s.downcase }
+    div(class: "py-5 first:pt-0 last:pb-0 grid grid-cols-12 gap-x-4 items-baseline") do
+      div(class: "col-span-12 sm:col-span-3 mb-2 sm:mb-0") do
+        div(class: "section-id mb-0.5") { plain category.to_s.upcase }
+        div(class: "mono-data text-ink-mute") { plain "(#{sorted.length})" }
+      end
+
+      div(class: "col-span-12 sm:col-span-9") do
+        div(class: "flex flex-wrap gap-1.5") do
+          sorted.each do |skill|
+            span(class: "chip") { plain skill.name.to_s.downcase }
+          end
+        end
+      end
     end
   end
 end

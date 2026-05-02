@@ -1,7 +1,7 @@
 puts "Seeding database..."
 
 # Admin user
-admin_email = ENV.fetch("ADMIN_EMAIL", "admin@nicholasnogueira.dev")
+admin_email = ENV.fetch("ADMIN_EMAIL", "admin@nicholastn.dev")
 admin_password = ENV["ADMIN_PASSWORD"].presence ||
   (Rails.env.production? ? raise("ADMIN_PASSWORD env var is required in production") : "changeme123")
 admin = User.find_or_create_by!(email: admin_email) do |u|
@@ -18,6 +18,8 @@ info.update!(
   location: "Fortaleza, Ceará, Brasil",
   phone: "+5585997041828",
   whatsapp_message: "Olá. Tive interesse em seu perfil. Podemos marcar uma conversa?",
+  tagline_pt: "focado em arquitetura de sistemas, performance e desenvolvimento de software com IA.",
+  tagline_en: "focused on system architecture, performance, and AI-augmented software development.",
   bio_pt: [
     "Sou um Engenheiro de Software com mais de 5 anos de experiência em diversas indústrias como fintechs, e-commerces, igrejas tech e govtechs. Minhas principais tecnologias incluem Ruby, Rails, Docker, PostgreSQL e Sidekiq. Meus colegas costumam me descrever como um pensador inovador e pragmático que testa ideias da perspectiva do usuário, e como um solucionador de problemas confiável que colabora em equipes multifuncionais de ritmo acelerado.",
     "Na Intersol, iniciei minha carreira desenvolvendo soluções web para administração pública. Implementei funcionalidades-chave para o módulo contábil do sistema, aumentando em 100% a consistência dos fluxos, e otimizei o processo de licitações resultando em 40% de aumento na velocidade para clientes de múltiplos municípios.",

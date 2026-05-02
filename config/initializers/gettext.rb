@@ -14,3 +14,20 @@ FastGettext.default_locale = "pt_BR"
 # Content-Disposition formatting) raise InvalidLocale on every request.
 I18n.available_locales = [ :pt, :en, :"pt-BR" ]
 I18n.default_locale = :pt
+
+# Dev only: reload translations when .po files change. FastGettext caches the
+# parsed .po at first lookup, so without this you must restart the server every
+# time you edit a translation.
+if Rails.env.development?
+  po_files = Dir.glob(Rails.root.join("locale", "**", "*.po").to_s)
+
+  po_watcher = Rails.application.config.file_watcher.new(po_files) do
+    FastGettext.translation_repositories.each_value do |repo|
+      repo.reload if repo.respond_to?(:reload)
+    end
+  end
+
+  Rails.application.config.to_prepare do
+    po_watcher.execute_if_updated
+  end
+end

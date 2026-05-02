@@ -6,7 +6,6 @@ msgid ""
 msgstr ""
 "Project-Id-Version: portfolio 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-15 00:00+0000\n"
 "PO-Revision-Date: 2026-04-15 00:00+0000\n"
 "Last-Translator: Nicholas Nogueira <nicholastimbo2022@gmail.com>\n"
 "Language-Team: English <en@li.org>\n"
@@ -19,68 +18,186 @@ msgstr ""
 msgid "About"
 msgstr "About"
 
-msgid "Experience"
-msgstr "Experience"
-
-msgid "Education"
-msgstr "Education"
-
-msgid "Skills"
-msgstr "Skills"
-
-msgid "Projects"
-msgstr "Projects"
-
-msgid "Blog"
-msgstr "Blog"
-
-msgid "View Projects"
-msgstr "View Projects"
-
-msgid "Get in Touch"
-msgstr "Get in Touch"
-
-msgid "About Me"
-msgstr "About Me"
-
-msgid "Let's talk"
-msgstr "Let's talk"
-
-msgid "Present"
-msgstr "Present"
-
 msgid "Academic"
 msgstr "Academic"
-
-msgid "Certifications"
-msgstr "Certifications"
-
-msgid "Volunteering"
-msgstr "Volunteering"
-
-msgid "Languages"
-msgstr "Languages"
-
-msgid "Highlights"
-msgstr "Highlights"
-
-msgid "No posts published yet."
-msgstr "No posts published yet."
-
-msgid "New content coming soon!"
-msgstr "New content coming soon!"
-
-msgid "Back to blog"
-msgstr "Back to blog"
-
-msgid "min read"
-msgstr "min read"
 
 msgid "All"
 msgstr "All"
 
+#, fuzzy
+msgid "All rights reserved, all errors mine."
+msgstr "All"
+
+msgid "An index"
+msgstr ""
+
+msgid "Apparatus"
+msgstr ""
+
+msgid "Begin reading"
+msgstr ""
+
+msgid "Bio forthcoming."
+msgstr ""
+
+msgid "Brazil"
+msgstr ""
+
+msgid "Built by the author in Ruby on Rails, served on warm paper, in two languages."
+msgstr ""
+
+msgid "Built with"
+msgstr ""
+
+msgid "Catalogued"
+msgstr ""
+
+msgid "Certifications"
+msgstr "Certifications"
+
+msgid "Chapter"
+msgstr ""
+
+msgid "Colophon"
+msgstr ""
+
+msgid "Correspondence"
+msgstr ""
+
+msgid "Education"
+msgstr "Education"
+
+msgid "End matter"
+msgstr ""
+
+msgid "Experience"
+msgstr "Experience"
+
+msgid "Frontispiece"
+msgstr ""
+
+msgid "Journal"
+msgstr ""
+
+msgid "Languages"
+msgstr "Languages"
+
+msgid "New entries forthcoming."
+msgstr ""
+
+msgid "Notes, marginalia, and field reports"
+msgstr ""
+
+msgid "On the apparatus"
+msgstr ""
+
+msgid "On the author"
+msgstr ""
+
+msgid "On the formation"
+msgstr ""
+
+msgid "On the work"
+msgstr ""
+
+msgid "Place"
+msgstr ""
+
+msgid "Plate i."
+msgstr ""
+
+msgid "Plates"
+msgstr ""
+
 msgid "Portfolio of Nicholas Nogueira - Full Stack Software Engineer"
 msgstr "Portfolio of Nicholas Nogueira - Full Stack Software Engineer"
 
-msgid "Articles about software development, architecture, and experiences in the tech industry."
-msgstr "Articles about software development, architecture, and experiences in the tech industry."
+msgid "Português · English"
+msgstr ""
+
+msgid "Present"
+msgstr "Present"
+
+msgid "Projects"
+msgstr "Projects"
+
+msgid "Read"
+msgstr ""
+
+msgid "Read the work"
+msgstr ""
+
+msgid "Return to journal"
+msgstr ""
+
+msgid "Section i."
+msgstr ""
+
+msgid "Section ii."
+msgstr ""
+
+msgid "Selected"
+msgstr ""
+
+msgid "Skills"
+msgstr "Skills"
+
+msgid "Speaks"
+msgstr ""
+
+msgid "Tags"
+msgstr ""
+
+msgid "The author, photographed for this volume."
+msgstr ""
+
+msgid "The first chapter is yet unwritten."
+msgstr ""
+
+msgid "The work"
+msgstr ""
+
+msgid "This volume was set in"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Volume I"
+msgstr ""
+
+msgid "Volunteering"
+msgstr "Volunteering"
+
+msgid "Write"
+msgstr ""
+
+msgid "a typeface by Undercase Type, with marginalia in"
+msgstr ""
+
+msgid "an ongoing manuscript on engineering, craft, and the work of building software in two languages."
+msgstr ""
+
+msgid "entries"
+msgstr ""
+
+msgid "entry"
+msgstr ""
+
+msgid "figures"
+msgstr ""
+
+msgid "min read"
+msgstr "min read"
+
+msgid "on software development, architecture, and the work of building things in two languages."
+msgstr ""
+
+msgid "ongoing"
+msgstr ""
+
+msgid "plates"
+msgstr ""
+
+msgid "portrait"
+msgstr ""

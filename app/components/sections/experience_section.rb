@@ -13,106 +13,125 @@ module Components
       def view_template
         section(
           id: "experience",
-          class: "py-20 px-6 md:px-12 lg:px-24",
+          class: "relative py-20 md:py-24",
           data: { controller: "scroll-animation" }
         ) do
-          div(class: "max-w-4xl mx-auto") do
-            render_section_title
-            render_timeline
+          div(class: "max-w-[1200px] mx-auto px-6 md:px-10") do
+            render_header
+            render_entries
           end
         end
       end
 
       private
 
-      def render_section_title
-        h2(class: "text-3xl md:text-4xl font-bold text-white mb-12") do
-          plain _("Experience")
-          span(class: "text-accent-green") { "." }
-        end
-      end
-
-      def render_timeline
-        div(class: "relative") do
-          # Vertical timeline line
-          div(class: "absolute left-0 md:left-4 top-0 bottom-0 w-px bg-white/10")
-
-          div(class: "space-y-12") do
-            @experiences.each do |experience|
-              render_experience_card(experience)
-            end
-          end
-        end
-      end
-
-      def render_experience_card(experience)
-        div(class: "relative pl-8 md:pl-16 group") do
-          # Timeline dot
-          div(
-            class: "absolute left-0 md:left-4 top-1.5 w-2 h-2 rounded-full bg-accent-green " \
-                   "-translate-x-[3.5px] ring-4 ring-bg-dark group-hover:ring-white/5 transition-all"
-          )
-
-          div(
-            class: "p-6 rounded-xl border border-white/5 bg-white/[0.02] " \
-                   "hover:bg-white/5 hover:border-white/10 transition-all duration-300"
-          ) do
-            render_card_header(experience)
-            render_card_body(experience)
-            render_technologies(experience)
-          end
-        end
-      end
-
-      def render_card_header(experience)
-        div(class: "flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-4") do
+      def render_header
+        div(
+          class: "flex items-end justify-between gap-4 pb-5 mb-12 border-b border-ink flex-wrap",
+          data: { scroll_animation_target: "element" }
+        ) do
           div do
-            h3(class: "text-lg font-bold text-white") do
-              if experience.company_url.present?
-                a(
-                  href: experience.company_url,
-                  target: "_blank",
-                  rel: "noopener noreferrer",
-                  class: "hover:text-accent-green transition-colors"
-                ) { experience.company }
-              else
-                plain experience.company
-              end
-            end
-            p(class: "text-accent-green font-medium") { experience.role }
+            div(class: "section-id mb-2") { plain "§02" }
+            h2(
+              class: "font-display text-ink display-wide leading-none",
+              style: "font-size: clamp(2.25rem, 4.8vw, 3.5rem); font-weight: 600;"
+            ) { plain _("Experience") }
           end
+          span(class: "mono-id text-ink-mute") do
+            plain "#{@experiences.length.to_s.rjust(2, '0')} / #{_('positions')}"
+          end
+        end
+      end
 
-          span(class: "text-sm text-text-muted whitespace-nowrap") do
+      def render_entries
+        div(class: "divide-y divide-rule") do
+          @experiences.each_with_index do |experience, i|
+            render_entry(experience, i)
+          end
+        end
+      end
+
+      def render_entry(experience, index)
+        article(
+          class: "grid grid-cols-12 gap-x-6 gap-y-3 py-8 md:py-10 group",
+          data: { scroll_animation_target: "element" }
+        ) do
+          render_index_strip(experience, index)
+          render_main(experience)
+        end
+      end
+
+      # Left column: index number + date range, mono
+      def render_index_strip(experience, index)
+        div(class: "col-span-12 md:col-span-3") do
+          div(class: "flex items-baseline gap-3 mb-1") do
+            span(class: "section-id text-[0.95rem]") do
+              plain "##{(index + 1).to_s.rjust(2, '0')}"
+            end
+            span(class: "mono-id text-ink-mute") { plain experience.ended_at.present? ? _("past") : _("current") }
+          end
+          div(class: "mono-data text-ink-mute") do
             plain format_period(experience.started_at, experience.ended_at)
           end
         end
       end
 
-      def render_card_body(experience)
-        if experience.description.present?
-          p(class: "text-text-muted mb-4 leading-relaxed") { experience.description }
-        end
+      def render_main(experience)
+        div(class: "col-span-12 md:col-span-9") do
+          # Header row: company + role
+          div(class: "flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-1") do
+            h3(
+              class: "font-display text-ink leading-tight",
+              style: "font-size: clamp(1.3rem, 2.2vw, 1.7rem); font-variation-settings: 'wdth' 100, 'opsz' 32; font-weight: 600;"
+            ) do
+              if experience.company_url.present?
+                a(
+                  href: experience.company_url,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  class: "signal-link"
+                ) { plain experience.company }
+              else
+                plain experience.company
+              end
+            end
+          end
 
-        achievements = experience.achievements
+          p(
+            class: "mono-data text-signal mb-5",
+            style: "letter-spacing: 0.04em;"
+          ) { plain experience.role.to_s.upcase }
+
+          if experience.description.present?
+            p(
+              class: "text-ink-soft text-[1rem] leading-[1.65] mb-4 max-w-[60ch]"
+            ) { plain experience.description }
+          end
+
+          render_achievements(experience.achievements)
+          render_technologies(experience.technologies)
+        end
+      end
+
+      def render_achievements(achievements)
         return unless achievements.present?
 
-        ul(class: "space-y-2 mb-4") do
+        ul(class: "max-w-[60ch] mb-5 space-y-2") do
           achievements.each do |achievement|
-            li(class: "flex items-start gap-2 text-sm text-text-muted") do
-              span(class: "text-accent-green mt-1.5 shrink-0") { "▹" }
-              span { achievement }
+            li(class: "flex items-baseline gap-3 text-ink-soft") do
+              span(class: "text-signal mono-id mt-0.5 shrink-0") { plain "→" }
+              span(class: "text-[0.95rem] leading-[1.55]") { plain achievement }
             end
           end
         end
       end
 
-      def render_technologies(experience)
-        technologies = experience.technologies
+      def render_technologies(technologies)
         return unless technologies.present?
 
-        div(class: "flex flex-wrap gap-2 pt-2 border-t border-white/5") do
+        div(class: "flex flex-wrap items-center gap-1.5 max-w-[60ch]") do
           technologies.each do |tech|
-            render Components::Ui::Badge.new(text: tech, size: :xs)
+            span(class: "chip") { plain tech }
           end
         end
       end
@@ -120,7 +139,7 @@ module Components
       def format_period(started_at, ended_at)
         start_str = format_date(started_at)
         end_str = ended_at.present? ? format_date(ended_at) : _("Present")
-        "#{start_str} - #{end_str}"
+        "#{start_str} → #{end_str}"
       end
 
       def format_date(date)

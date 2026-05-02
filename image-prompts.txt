@@ -1,0 +1,176 @@
+================================================================
+PROMPTS PARA IMAGENS — PORTFOLIO NICHOLAS NOGUEIRA
+================================================================
+
+Tokens de referência (use em todos os prompts pra coerência):
+
+  Cores:
+    Papel creme       #F2F0EA
+    Grafite (ink)     #161512
+    Signal-orange     #C5471A
+    Taupe (rule)      #BDB6A6
+
+  Tipografia:
+    Display/body      Bricolage Grotesque (variável: opsz, wdth, weight)
+    Mono              JetBrains Mono
+
+
+================================================================
+1. FOTO DE PERFIL — mande junto com a foto original
+================================================================
+
+Transforme esta foto minha num retrato two-color screenprint / risograph
+estilo "engineer zine" — preto puro como cor primária e laranja queimado
+(#C5471A) como spot color, impressos sobre papel creme quente (#F2F0EA).
+NÃO foto realista, NÃO ilustração vetorial colorida, NÃO cartoon de avatar
+— quero a sensação de uma capa de zine de engenharia / ilustração editorial
+da Stripe Press / pôster impresso com pequena imperfeição de registro entre
+as duas cores.
+
+Enquadramento: ombros pra cima, ângulo de três-quartos suave, olhar direto
+pra câmera. Postura de retrato profissional, não de selfie.
+
+Expressão / emoção: atenta, engajada, ligeiramente desafiadora-curiosa —
+postura de "alguém que tá pensando em como otimizar isso aí". Boca fechada
+com um meio sorriso contido (assimétrico, lado direito da boca levemente
+puxado), sobrancelhas relaxadas mas atentas. Olhar focado e vivo, com
+presença. NÃO é o ar contemplativo de escritor; é o ar de builder/engenheiro
+que constrói coisas e se diverte fazendo. Evitar: sorriso largo de stock
+photo, expressão neutra-morta, olhar tímido, pose corporativa estéril.
+
+Estética visual:
+  - Cor: apenas duas tintas — preto puro (#161512) + laranja queimado
+    (#C5471A). O laranja entra como sombra/luz secundária ou camada de
+    overprint deslocada uns 2px (efeito de mau registro proposital,
+    característico de risograph).
+  - Textura: halftone fino tipo riso (pontos visíveis em close, mas
+    equilibrados), leve grão de papel ao fundo.
+  - Linha: preserve as feições reconhecíveis (rosto, óculos, cabelo curto,
+    cavanhaque/barba se houver). Não estilize as feições a ponto de virar
+    desenho.
+  - Fundo: creme #F2F0EA uniforme, sem cenário, sem decoração, sem grid.
+  - Sem moldura, sem texto, sem assinatura na imagem.
+
+Saída: vertical, proporção 4:5, alta resolução, retrato isolado.
+
+Inspiração: capas Stripe Press, ilustrações editoriais Anthropic, pôsteres
+riso da People of Print, retratos da New Yorker em duotone moderno. NÃO
+inspirar em hedcuts WSJ (muito formal), NÃO em estilo Pixar (muito cartoon).
+
+
+================================================================
+2. FAVICON — escolha A ou B
+================================================================
+
+A favicon vive em 16/32/64px, então precisa ser um símbolo único e legível
+— qualquer detalhe se perde.
+
+----- OPÇÃO A — Monograma NN (combina com o header) -----
+
+Crie um favicon quadrado 512×512px (formato PNG, fundo sólido) com o
+monograma "NN" centralizado. Letras em sans-serif geométrica condensada,
+peso bold (700), em creme quente (#F2F0EA) sobre fundo grafite preto
+(#161512). Sem borda, sem sombra, sem gradiente. Letras devem preencher
+~70% da altura do quadrado e ficar levemente espaçadas (tracking -2%).
+Estética: monograma de estúdio de engenharia, não de marca de moda.
+Inspiração: logo da Linear, monogramas corporativos suíços minimalistas.
+
+----- OPÇÃO B — Símbolo § laranja (mais distintivo) -----
+
+Crie um favicon quadrado 512×512px com o caractere "§" (símbolo de seção)
+centralizado. Em laranja queimado #C5471A, peso bold, sobre fundo creme
+quente #F2F0EA. O § deve ocupar ~75% da altura. Sem borda, sem sombra.
+Tipografia geométrica humanista. Estética minimalista de spec sheet / RFC
+technical document.
+
+DICA: se quiser ainda mais limpo, dá pra gerar diretamente um SVG da
+opção A ou B na mão (sem IA) e fica mais nítido em qualquer tamanho.
+
+
+================================================================
+3. OPEN GRAPH / BANNER DO WHATSAPP
+================================================================
+
+OG images são 1200×630px (proporção 1.91:1). É uma composição gráfica,
+não foto.
+
+Crie uma imagem OpenGraph 1200×630px estilo "spec sheet / capa de manual
+técnico" pra um portfólio de engenheiro de software.
+
+Fundo: papel creme quente #F2F0EA com leve textura de grão (sutil, quase
+imperceptível). Sem foto de pessoa. É composição puramente tipográfica +
+gráfica.
+
+Layout (12-col grid, padding 64px):
+
+  - Topo esquerdo: bloco preto sólido (#161512) 64×64px com as letras "NN"
+    em creme #F2F0EA, sans-serif geométrica bold, condensada. Ao lado, em
+    duas linhas: "Nicholas Nogueira" (sans-serif bold, peso 600, grafite
+    #161512, ~32px) e logo abaixo "● AVAILABLE" em laranja queimado
+    #C5471A (mono, ~12px, tracking 0.14em, com bolinha pulsante laranja
+    antes).
+
+  - Centro-esquerda (área principal): título gigante "Software Engineer"
+    em sans-serif extra-bold condensada (Bricolage Grotesque equivalente,
+    peso 700, ~108px, grafite, leading 0.9, tracking -2.5%). Numa segunda
+    linha mais sutil, em peso regular itálico cinza-grafite (#2E2A24,
+    ~28px): "system architecture · performance · AI-augmented dev".
+
+  - Embaixo, faixa de tags: chips outline com texto mono uppercase pequeno
+    (~13px, tracking 0.06em, padding 4×10px, borda 1px taupe #BDB6A6):
+    "ruby" / "rails" / "postgres" / "docker" / "vue". Espaçados 8px entre
+    si.
+
+  - Topo direito: texto mono uppercase pequeno alinhado à direita:
+    "§00 / 2026" em laranja queimado, e abaixo "v2026.05" em taupe
+    (~11px, tracking 0.14em).
+
+  - Rodapé direito: "nicholastn.dev" em mono peso medium (~13px,
+    grafite). Linha hairline 1px taupe acima dele, com 24px de margin-top.
+
+  - Detalhe decorativo: linha horizontal hairline taupe (#BDB6A6, 1px)
+    cruzando a imagem inteira logo abaixo do título principal, separando
+    as áreas como num documento técnico.
+
+Paleta estritamente: papel creme #F2F0EA, grafite #161512, taupe #BDB6A6,
+signal-orange #C5471A. Nada de gradient, nada de glassmorphism, nada de
+degradê, nada de azul/verde/roxo, nada de fotos.
+
+Tipografia: Bricolage Grotesque (display + body) e JetBrains Mono (todos
+os textos pequenos uppercase com tracking). Se a IA não tiver Bricolage
+Grotesque, usar uma sans grotesque variável similar (Söhne, GT America,
+Cabinet Grotesk, NÃO Inter, NÃO Helvetica genérica).
+
+Tom geral: capa de manual técnico anos 2020, primeira página de RFC
+editorial, página de abertura de relatório de engenharia. Densa de
+informação, calma, autoritativa, builder-coded. NÃO marketing slick, NÃO
+startup pastel, NÃO Stripe Press literária.
+
+
+================================================================
+INTEGRAÇÃO NO RAILS (depois de ter os arquivos)
+================================================================
+
+Foto de perfil:
+    bin/rails runner '
+      pi = PersonalInfo.instance
+      pi.profile_image.purge if pi.profile_image.attached?
+      pi.profile_image.attach(
+        io: File.open("/caminho/pra/retrato-final.jpg"),
+        filename: "nicholas-portrait.jpg",
+        content_type: "image/jpeg"
+      )
+    '
+
+Favicon:
+    Sobrescrever public/icon.png (PNG 512×512) e public/icon.svg.
+    Já estão linkados no app/views/layouts/application.html.erb.
+
+OG image:
+    Salvar como public/og-image.png (ou .jpg).
+    Adicionar no <head> do application.html.erb:
+      <meta property="og:image" content="<%= asset_url('og-image.png') %>">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="630">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image" content="<%= asset_url('og-image.png') %>">
