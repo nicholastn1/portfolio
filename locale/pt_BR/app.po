@@ -15,8 +15,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid "About"
-msgstr "Sobre"
+msgid "About / bio"
+msgstr "Sobre / bio"
 
 msgid "Academic"
 msgstr "Acadêmica"
@@ -24,207 +24,102 @@ msgstr "Acadêmica"
 msgid "All"
 msgstr "Todos"
 
-msgid "All rights reserved, all errors mine."
-msgstr "Todos os direitos reservados, todos os erros meus."
+msgid "Available"
+msgstr "Disponível"
 
-msgid "An index"
-msgstr "Um índice"
+msgid "Back to blog"
+msgstr "Voltar ao blog"
 
-msgid "Apparatus"
-msgstr "Ferramental"
-
-msgid "Begin reading"
-msgstr "Começar a leitura"
+msgid "Based in"
+msgstr "Baseado em"
 
 msgid "Bio forthcoming."
 msgstr "Biografia em breve."
 
+msgid "Blog"
+msgstr ""
+
 msgid "Brazil"
 msgstr "Brasil"
 
-msgid "Built by the author in Ruby on Rails, served on warm paper, in two languages."
-msgstr "Construído pelo autor em Ruby on Rails, impresso sobre papel quente, em duas línguas."
-
-msgid "Built with"
-msgstr "Construído com"
-
-msgid "Catalogued"
-msgstr "Catalogado"
+msgid "By category"
+msgstr "Por categoria"
 
 msgid "Certifications"
 msgstr "Certificações"
 
-msgid "Chapter"
-msgstr "Capítulo"
-
-msgid "Colophon"
-msgstr "Colofão"
-
-msgid "Correspondence"
-msgstr "Correspondência"
+msgid "Daily drivers"
+msgstr "Uso diário"
 
 msgid "Education"
 msgstr "Formação"
 
-msgid "End matter"
-msgstr "Pós-textuais"
+msgid "Email"
+msgstr "Email"
+
+msgid "End of file"
+msgstr "Fim de arquivo"
 
 msgid "Experience"
 msgstr "Experiência"
 
-msgid "Frontispiece"
-msgstr "Frontispício"
+msgid "Field notes on software development, architecture, optimization, and AI-augmented engineering."
+msgstr "Notas de campo sobre desenvolvimento de software, arquitetura, otimização e engenharia com IA."
 
-msgid "Journal"
-msgstr "Diário"
+msgid "Figure 01"
+msgstr "Figura 01"
+
+msgid "Filter"
+msgstr "Filtrar"
+
+msgid "Formation / record"
+msgstr "Formação / registro"
+
+msgid "Get in touch"
+msgstr "Entre em contato"
 
 msgid "Languages"
 msgstr "Idiomas"
 
-msgid "New entries forthcoming."
-msgstr "Novas entradas em breve."
+msgid "Live"
+msgstr "No ar"
 
-msgid "Notes, marginalia, and field reports"
-msgstr "Notas, marginália e relatos de campo"
+msgid "New posts coming soon."
+msgstr "Novos posts em breve."
 
-msgid "On the apparatus"
-msgstr "Sobre o ferramental"
-
-msgid "On the author"
-msgstr "Sobre o autor"
-
-msgid "On the formation"
-msgstr "Sobre a formação"
-
-msgid "On the work"
-msgstr "Sobre o trabalho"
+msgid "No entries yet."
+msgstr "Nenhuma entrada ainda."
 
 msgid "Place"
 msgstr "Local"
 
-msgid "Plate i."
-msgstr "Prancha i."
-
-msgid "Plates"
-msgstr "Pranchas"
-
-msgid "Portfolio of Nicholas Nogueira - Full Stack Software Engineer"
-msgstr "Portfolio de Nicholas Nogueira - Engenheiro de Software Full Stack"
-
-msgid "Português · English"
-msgstr "Português · Inglês"
+#, fuzzy
+msgid "Portfolio of Nicholas Nogueira — Software Engineer focused on system architecture, performance, and AI-augmented software development."
+msgstr "focado em arquitetura de sistemas, performance e desenvolvimento de software com IA."
 
 msgid "Present"
 msgstr "Presente"
 
-msgid "Projects"
-msgstr "Projetos"
+msgid "Profile"
+msgstr "Perfil"
 
 msgid "Read"
 msgstr "Ler"
 
-msgid "Read the work"
-msgstr "Ver o trabalho"
+msgid "Read profile"
+msgstr "Ler perfil"
 
-msgid "Return to journal"
-msgstr "Voltar ao diário"
+msgid "Selected work"
+msgstr "Trabalhos selecionados"
 
-msgid "Section i."
-msgstr "Seção i."
-
-msgid "Section ii."
-msgstr "Seção ii."
-
-msgid "Selected"
-msgstr "Selecionados"
-
-msgid "Skills"
-msgstr "Skills"
-
-msgid "Speaks"
-msgstr "Línguas"
-
-msgid "Tags"
-msgstr "Tópicos"
-
-msgid "The author, drawn for this volume."
-msgstr "O autor, desenhado para este volume."
-
-msgid "The first chapter is yet unwritten."
-msgstr "O primeiro capítulo ainda não foi escrito."
-
-msgid "The work"
-msgstr "O trabalho"
-
-msgid "This volume was set in"
-msgstr "Este volume foi composto em"
-
-msgid "Title"
-msgstr "Título"
-
-msgid "Volume I"
-msgstr "Volume I"
-
-msgid "Volunteering"
-msgstr "Voluntariado"
-
-msgid "Write"
-msgstr "Escreva"
-
-msgid "a typeface by Undercase Type, with marginalia in"
-msgstr "uma tipografia da Undercase Type, com marginália em"
-
-msgid "an ongoing manuscript on engineering, craft, and the work of building software in two languages."
-msgstr "um manuscrito em curso sobre engenharia, ofício e o trabalho de construir software em duas línguas."
-
-msgid "entries"
-msgstr "entradas"
-
-msgid "entry"
-msgstr "entrada"
-
-msgid "figures"
-msgstr "figuras"
-
-msgid "min read"
-msgstr "min de leitura"
-
-msgid "on software development, architecture, and the work of building things in two languages."
-msgstr "sobre desenvolvimento de software, arquitetura e o trabalho de construir coisas em duas línguas."
-
-msgid "ongoing"
-msgstr "em andamento"
-
-msgid "plates"
-msgstr "pranchas"
-
-msgid "portrait"
-msgstr "retrato"
-
-# === Field manual / spec sheet (v2) ===
-msgid "available"
-msgstr "disponível"
-
-msgid "Profile"
-msgstr "Perfil"
+msgid "Send email"
+msgstr "Enviar email"
 
 msgid "Stack"
 msgstr "Stack"
 
-msgid "Work"
-msgstr "Trabalhos"
-
-msgid "Notes"
-msgstr "Notas"
-
-msgid "Open to opportunities"
-msgstr "Aberto a oportunidades"
-
-msgid "focused on system architecture, performance, and AI-augmented software development."
-msgstr "focado em arquitetura de sistemas, performance e desenvolvimento de software com IA."
-
-msgid "Based in"
-msgstr "Baseado em"
+msgid "Status"
+msgstr "Status"
 
 msgid "Updated"
 msgstr "Atualizado"
@@ -232,83 +127,42 @@ msgstr "Atualizado"
 msgid "View selected work"
 msgstr "Ver trabalhos selecionados"
 
-msgid "Read profile"
-msgstr "Ler perfil"
+msgid "Volunteering"
+msgstr "Voluntariado"
 
-msgid "About / bio"
-msgstr "Sobre / bio"
-
-msgid "positions"
-msgstr "posições"
-
-msgid "past"
-msgstr "anterior"
-
-msgid "current"
-msgstr "atual"
-
-msgid "Formation / record"
-msgstr "Formação / registro"
-
-msgid "tools"
-msgstr "ferramentas"
-
-msgid "Daily drivers"
-msgstr "Uso diário"
-
-msgid "By category"
-msgstr "Por categoria"
-
-msgid "Selected work"
-msgstr "Trabalhos selecionados"
-
-msgid "projects"
-msgstr "projetos"
+msgid "Work"
+msgstr "Trabalhos"
 
 msgid "active"
 msgstr "ativo"
 
-msgid "Live"
-msgstr "No ar"
+# === Field manual / spec sheet (v2) ===
+msgid "available"
+msgstr "disponível"
 
-msgid "Get in touch"
-msgstr "Entre em contato"
+msgid "current"
+msgstr "atual"
 
-msgid "End of file"
-msgstr "Fim de arquivo"
+msgid "entries"
+msgstr "entradas"
 
-msgid "Write me"
-msgstr "Me escreva"
+msgid "focused on system architecture, performance, and AI-augmented software development."
+msgstr "focado em arquitetura de sistemas, performance e desenvolvimento de software com IA."
 
-msgid "Email"
-msgstr "Email"
+msgid "min read"
+msgstr "min de leitura"
 
-msgid "Status"
-msgstr "Status"
+msgid "past"
+msgstr "anterior"
 
-msgid "Available"
-msgstr "Disponível"
+msgid "portrait"
+msgstr "retrato"
 
-msgid "Field notes on software development, architecture, optimization, and AI-augmented engineering."
-msgstr "Notas de campo sobre desenvolvimento de software, arquitetura, otimização e engenharia com IA."
+msgid "positions"
+msgstr "posições"
 
-msgid "Filter"
-msgstr "Filtrar"
+msgid "projects"
+msgstr "projetos"
 
-msgid "No entries yet."
-msgstr "Nenhuma entrada ainda."
-
-msgid "New notes coming soon."
-msgstr "Novas notas em breve."
-
-msgid "Back to notes"
-msgstr "Voltar às notas"
-
-msgid "Back to blog"
-msgstr "Voltar ao blog"
-
-msgid "New posts coming soon."
-msgstr "Novos posts em breve."
-
-msgid "Figure 01"
-msgstr "Figura 01"
+msgid "tools"
+msgstr "ferramentas"

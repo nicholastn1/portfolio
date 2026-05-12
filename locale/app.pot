@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-02 16:52-0300\n"
-"PO-Revision-Date: 2026-05-02 16:52-0300\n"
+"POT-Creation-Date: 2026-05-11 16:59-0300\n"
+"PO-Revision-Date: 2026-05-11 16:59-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-msgid "About"
+msgid "About / bio"
 msgstr ""
 
 msgid "Academic"
@@ -27,179 +27,143 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-msgid "All rights reserved, all errors mine."
+msgid "Available"
 msgstr ""
 
-msgid "An index"
+msgid "Back to blog"
 msgstr ""
 
-msgid "Apparatus"
-msgstr ""
-
-msgid "Begin reading"
+msgid "Based in"
 msgstr ""
 
 msgid "Bio forthcoming."
 msgstr ""
 
+msgid "Blog"
+msgstr ""
+
 msgid "Brazil"
 msgstr ""
 
-msgid "Built by the author in Ruby on Rails, served on warm paper, in two languages."
-msgstr ""
-
-msgid "Built with"
-msgstr ""
-
-msgid "Catalogued"
+msgid "By category"
 msgstr ""
 
 msgid "Certifications"
 msgstr ""
 
-msgid "Chapter"
-msgstr ""
-
-msgid "Colophon"
-msgstr ""
-
-msgid "Correspondence"
+msgid "Daily drivers"
 msgstr ""
 
 msgid "Education"
 msgstr ""
 
-msgid "End matter"
+msgid "Email"
+msgstr ""
+
+msgid "End of file"
 msgstr ""
 
 msgid "Experience"
 msgstr ""
 
-msgid "Frontispiece"
+msgid "Field notes on software development, architecture, optimization, and AI-augmented engineering."
 msgstr ""
 
-msgid "Journal"
+msgid "Figure 01"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Formation / record"
+msgstr ""
+
+msgid "Get in touch"
 msgstr ""
 
 msgid "Languages"
 msgstr ""
 
-msgid "New entries forthcoming."
+msgid "Live"
 msgstr ""
 
-msgid "Notes, marginalia, and field reports"
+msgid "New posts coming soon."
 msgstr ""
 
-msgid "On the apparatus"
-msgstr ""
-
-msgid "On the author"
-msgstr ""
-
-msgid "On the formation"
-msgstr ""
-
-msgid "On the work"
+msgid "No entries yet."
 msgstr ""
 
 msgid "Place"
 msgstr ""
 
-msgid "Plate i."
-msgstr ""
-
-msgid "Plates"
-msgstr ""
-
-msgid "Portfolio of Nicholas Nogueira - Full Stack Software Engineer"
-msgstr ""
-
-msgid "Português · English"
+msgid "Portfolio of Nicholas Nogueira — Software Engineer focused on system architecture, performance, and AI-augmented software development."
 msgstr ""
 
 msgid "Present"
 msgstr ""
 
-msgid "Projects"
+msgid "Profile"
 msgstr ""
 
 msgid "Read"
 msgstr ""
 
-msgid "Read the work"
+msgid "Read profile"
 msgstr ""
 
-msgid "Return to journal"
+msgid "Selected work"
 msgstr ""
 
-msgid "Section i."
+msgid "Send email"
 msgstr ""
 
-msgid "Section ii."
+msgid "Stack"
 msgstr ""
 
-msgid "Selected"
+msgid "Status"
 msgstr ""
 
-msgid "Skills"
+msgid "Updated"
 msgstr ""
 
-msgid "Speaks"
-msgstr ""
-
-msgid "Tags"
-msgstr ""
-
-msgid "The author, photographed for this volume."
-msgstr ""
-
-msgid "The first chapter is yet unwritten."
-msgstr ""
-
-msgid "The work"
-msgstr ""
-
-msgid "This volume was set in"
-msgstr ""
-
-msgid "Title"
-msgstr ""
-
-msgid "Volume I"
+msgid "View selected work"
 msgstr ""
 
 msgid "Volunteering"
 msgstr ""
 
-msgid "Write"
+msgid "Work"
 msgstr ""
 
-msgid "a typeface by Undercase Type, with marginalia in"
+msgid "active"
 msgstr ""
 
-msgid "an ongoing manuscript on engineering, craft, and the work of building software in two languages."
+msgid "available"
+msgstr ""
+
+msgid "current"
 msgstr ""
 
 msgid "entries"
 msgstr ""
 
-msgid "entry"
-msgstr ""
-
-msgid "figures"
+msgid "focused on system architecture, performance, and AI-augmented software development."
 msgstr ""
 
 msgid "min read"
 msgstr ""
 
-msgid "on software development, architecture, and the work of building things in two languages."
-msgstr ""
-
-msgid "ongoing"
-msgstr ""
-
-msgid "plates"
+msgid "past"
 msgstr ""
 
 msgid "portrait"
+msgstr ""
+
+msgid "positions"
+msgstr ""
+
+msgid "projects"
+msgstr ""
+
+msgid "tools"
 msgstr ""

@@ -52,7 +52,7 @@ module Components
                 class: "inline-flex items-center gap-2 px-4 py-2.5 bg-ink text-paper " \
                        "mono-id hover:bg-signal transition-colors"
               ) do
-                plain _("Write me")
+                plain _("Send email")
                 span { plain "→" }
               end
             end

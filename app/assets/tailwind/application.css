@@ -216,6 +216,11 @@ body.paper-grain::before {
   background: var(--color-ink);
   color: var(--color-paper);
 }
+.chip-strong:hover {
+  border-color: var(--color-signal);
+  background: var(--color-signal);
+  color: var(--color-paper);
+}
 
 /* Duotone risograph portrait — cream bg melts into paper in light mode.
    In dark mode, let the image sit as a tipped-in print card (no blend) so the

@@ -15,7 +15,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "About"
+#, fuzzy
+msgid "About / bio"
 msgstr "About"
 
 msgid "Academic"
@@ -24,179 +25,144 @@ msgstr "Academic"
 msgid "All"
 msgstr "All"
 
-msgid "All rights reserved, all errors mine."
-msgstr "All rights reserved, all errors mine."
-
-msgid "An index"
+msgid "Available"
 msgstr ""
 
-msgid "Apparatus"
+msgid "Back to blog"
 msgstr ""
 
-msgid "Begin reading"
+msgid "Based in"
 msgstr ""
 
 msgid "Bio forthcoming."
 msgstr ""
 
+msgid "Blog"
+msgstr ""
+
 msgid "Brazil"
 msgstr ""
 
-msgid "Built by the author in Ruby on Rails, served on warm paper, in two languages."
-msgstr ""
-
-msgid "Built with"
-msgstr ""
-
-msgid "Catalogued"
+msgid "By category"
 msgstr ""
 
 msgid "Certifications"
 msgstr "Certifications"
 
-msgid "Chapter"
-msgstr ""
-
-msgid "Colophon"
-msgstr ""
-
-msgid "Correspondence"
+msgid "Daily drivers"
 msgstr ""
 
 msgid "Education"
 msgstr "Education"
 
-msgid "End matter"
+msgid "Email"
+msgstr ""
+
+msgid "End of file"
 msgstr ""
 
 msgid "Experience"
 msgstr "Experience"
 
-msgid "Frontispiece"
+msgid "Field notes on software development, architecture, optimization, and AI-augmented engineering."
 msgstr ""
 
-msgid "Journal"
+msgid "Figure 01"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Formation / record"
+msgstr ""
+
+msgid "Get in touch"
 msgstr ""
 
 msgid "Languages"
 msgstr "Languages"
 
-msgid "New entries forthcoming."
+msgid "Live"
 msgstr ""
 
-msgid "Notes, marginalia, and field reports"
+msgid "New posts coming soon."
 msgstr ""
 
-msgid "On the apparatus"
-msgstr ""
-
-msgid "On the author"
-msgstr ""
-
-msgid "On the formation"
-msgstr ""
-
-msgid "On the work"
+msgid "No entries yet."
 msgstr ""
 
 msgid "Place"
 msgstr ""
 
-msgid "Plate i."
-msgstr ""
-
-msgid "Plates"
-msgstr ""
-
-msgid "Portfolio of Nicholas Nogueira - Full Stack Software Engineer"
-msgstr "Portfolio of Nicholas Nogueira - Full Stack Software Engineer"
-
-msgid "Português · English"
+msgid "Portfolio of Nicholas Nogueira — Software Engineer focused on system architecture, performance, and AI-augmented software development."
 msgstr ""
 
 msgid "Present"
 msgstr "Present"
 
-msgid "Projects"
-msgstr "Projects"
+msgid "Profile"
+msgstr ""
 
 msgid "Read"
 msgstr ""
 
-msgid "Read the work"
+msgid "Read profile"
 msgstr ""
 
-msgid "Return to journal"
+msgid "Selected work"
 msgstr ""
 
-msgid "Section i."
+msgid "Send email"
 msgstr ""
 
-msgid "Section ii."
+msgid "Stack"
 msgstr ""
 
-msgid "Selected"
+msgid "Status"
 msgstr ""
 
-msgid "Skills"
-msgstr "Skills"
-
-msgid "Speaks"
+msgid "Updated"
 msgstr ""
 
-msgid "Tags"
-msgstr ""
-
-msgid "The author, photographed for this volume."
-msgstr ""
-
-msgid "The first chapter is yet unwritten."
-msgstr ""
-
-msgid "The work"
-msgstr ""
-
-msgid "This volume was set in"
-msgstr ""
-
-msgid "Title"
-msgstr ""
-
-msgid "Volume I"
+msgid "View selected work"
 msgstr ""
 
 msgid "Volunteering"
 msgstr "Volunteering"
 
-msgid "Write"
+msgid "Work"
 msgstr ""
 
-msgid "a typeface by Undercase Type, with marginalia in"
+msgid "active"
 msgstr ""
 
-msgid "an ongoing manuscript on engineering, craft, and the work of building software in two languages."
+msgid "available"
+msgstr ""
+
+msgid "current"
 msgstr ""
 
 msgid "entries"
 msgstr ""
 
-msgid "entry"
-msgstr ""
-
-msgid "figures"
+msgid "focused on system architecture, performance, and AI-augmented software development."
 msgstr ""
 
 msgid "min read"
 msgstr "min read"
 
-msgid "on software development, architecture, and the work of building things in two languages."
-msgstr ""
-
-msgid "ongoing"
-msgstr ""
-
-msgid "plates"
+msgid "past"
 msgstr ""
 
 msgid "portrait"
+msgstr ""
+
+msgid "positions"
+msgstr ""
+
+#, fuzzy
+msgid "projects"
+msgstr "Projects"
+
+msgid "tools"
 msgstr ""
