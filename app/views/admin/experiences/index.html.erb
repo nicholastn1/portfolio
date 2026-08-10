@@ -6,15 +6,17 @@
 <table class="w-full">
   <thead>
     <tr>
+      <th class="pb-3 border-b border-rule w-8"></th>
       <th class="text-left text-xs text-ink-mute uppercase tracking-wider pb-3 border-b border-rule">Empresa</th>
       <th class="text-left text-xs text-ink-mute uppercase tracking-wider pb-3 border-b border-rule">Cargo</th>
       <th class="text-left text-xs text-ink-mute uppercase tracking-wider pb-3 border-b border-rule">Periodo</th>
       <th class="text-left text-xs text-ink-mute uppercase tracking-wider pb-3 border-b border-rule"></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody data-controller="sortable" data-sortable-url-value="<%= admin_reorder_path(resource: 'experiences') %>" data-action="dragover->sortable#over drop->sortable#drop dragend->sortable#end">
     <% @experiences.each do |experience| %>
-      <tr>
+      <tr data-id="<%= experience.id %>">
+        <td class="py-3 border-b border-rule text-ink-mute/40 cursor-grab active:cursor-grabbing select-none" draggable="true" data-action="dragstart->sortable#start" title="Arrastar para reordenar">&#10303;</td>
         <td class="py-3 text-sm text-ink-mute border-b border-rule"><%= experience.company %></td>
         <td class="py-3 text-sm text-ink-mute border-b border-rule"><%= experience.role_pt %></td>
         <td class="py-3 text-sm text-ink-mute border-b border-rule">
