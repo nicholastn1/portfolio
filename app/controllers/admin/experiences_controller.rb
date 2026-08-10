@@ -3,7 +3,7 @@ module Admin
     before_action :set_experience, only: %i[edit update destroy]
 
     def index
-      @pagy, @experiences = pagy(Experience.all, limit: 20)
+      @pagy, @experiences = pagy(:offset, Experience.all, limit: 20)
     end
 
     def new

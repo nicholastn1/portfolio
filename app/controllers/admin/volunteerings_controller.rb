@@ -3,7 +3,7 @@ module Admin
     before_action :set_volunteering, only: %i[edit update destroy]
 
     def index
-      @pagy, @volunteerings = pagy(Volunteering.all, limit: 20)
+      @pagy, @volunteerings = pagy(:offset, Volunteering.all, limit: 20)
     end
 
     def new

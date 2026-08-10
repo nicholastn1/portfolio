@@ -6,7 +6,7 @@ module Admin
     PROFICIENCIES = %w[proficient intermediate beginner].freeze
 
     def index
-      @pagy, @skills = pagy(Skill.order(:position))
+      @pagy, @skills = pagy(:offset, Skill.order(:position))
     end
 
     def new
