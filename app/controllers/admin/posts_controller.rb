@@ -3,7 +3,7 @@ module Admin
     before_action :set_post, only: %i[edit update destroy]
 
     def index
-      @pagy, @posts = pagy(Post.order(created_at: :desc))
+      @pagy, @posts = pagy(:offset, Post.order(created_at: :desc))
     end
 
     def new

@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.published.recent
     @posts = @posts.by_category(params[:category]) if params[:category].present?
-    @pagy, @posts = pagy(@posts, limit: 9)
+    @pagy, @posts = pagy(:offset, @posts, limit: 9)
   end
 
   def show

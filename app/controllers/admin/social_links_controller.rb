@@ -3,7 +3,7 @@ module Admin
     before_action :set_social_link, only: %i[edit update destroy]
 
     def index
-      @pagy, @social_links = pagy(SocialLink.order(:position))
+      @pagy, @social_links = pagy(:offset, SocialLink.order(:position))
     end
 
     def new

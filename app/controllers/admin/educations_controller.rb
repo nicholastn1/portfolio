@@ -3,7 +3,7 @@ module Admin
     before_action :set_education, only: %i[edit update destroy]
 
     def index
-      @pagy, @educations = pagy(Education.all, limit: 20)
+      @pagy, @educations = pagy(:offset, Education.all, limit: 20)
     end
 
     def new
