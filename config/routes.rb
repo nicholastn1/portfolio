@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
     root "dashboard#index"
 
+    patch "reorder/:resource", to: "positions#update", as: :reorder
+
     resource :personal_info, only: [ :show, :edit, :update ]
     resources :social_links, except: [ :show ]
     resources :experiences
