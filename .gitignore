@@ -44,3 +44,7 @@
 
 # Claude Code worktrees (temporary agent workspaces)
 .claude/worktrees/
+
+# gettext byproducts (regenerados por `rails gettext:find`)
+locale/*/*.edit.po
+locale/*/*.po.time_stamp

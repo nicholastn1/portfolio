@@ -3,7 +3,7 @@ module Admin
     before_action :set_language, only: %i[edit update destroy]
 
     def index
-      @pagy, @languages = pagy(Language.order(:position))
+      @pagy, @languages = pagy(:offset, Language.order(:position))
     end
 
     def new

@@ -33,7 +33,7 @@ gem "gettext_i18n_rails"
 # Admin search/filtering
 gem "ransack", "~> 4.4"
 # Lightweight pagination
-gem "pagy", "~> 9.0"
+gem "pagy", "~> 43.5"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]

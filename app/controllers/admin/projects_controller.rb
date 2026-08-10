@@ -3,7 +3,7 @@ module Admin
     before_action :set_project, only: %i[edit update destroy]
 
     def index
-      @pagy, @projects = pagy(Project.all, limit: 20)
+      @pagy, @projects = pagy(:offset, Project.all, limit: 20)
     end
 
     def new

@@ -6,15 +6,17 @@
 <table class="w-full">
   <thead>
     <tr>
+      <th class="pb-3 border-b border-rule w-8"></th>
       <th class="text-left text-xs text-ink-mute uppercase tracking-wider pb-3 border-b border-rule">Plataforma</th>
       <th class="text-left text-xs text-ink-mute uppercase tracking-wider pb-3 border-b border-rule">Label</th>
       <th class="text-left text-xs text-ink-mute uppercase tracking-wider pb-3 border-b border-rule">URL</th>
       <th class="text-left text-xs text-ink-mute uppercase tracking-wider pb-3 border-b border-rule"></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody data-controller="sortable" data-sortable-url-value="<%= admin_reorder_path(resource: 'social_links') %>" data-action="dragover->sortable#over drop->sortable#drop dragend->sortable#end">
     <% @social_links.each do |social_link| %>
-      <tr>
+      <tr data-id="<%= social_link.id %>">
+        <td class="py-3 border-b border-rule text-ink-mute/40 cursor-grab active:cursor-grabbing select-none" draggable="true" data-action="dragstart->sortable#start" title="Arrastar para reordenar">&#10303;</td>
         <td class="py-3 text-sm text-ink-mute border-b border-rule">
           <span class="px-2 py-0.5 rounded-full text-xs bg-paper-deep border border-rule"><%= social_link.platform&.capitalize %></span>
         </td>
@@ -33,6 +35,6 @@
 
 <% if @pagy.pages > 1 %>
   <div class="mt-8">
-    <%== pagy_nav(@pagy) %>
+    <%== @pagy.series_nav %>
   </div>
 <% end %>
